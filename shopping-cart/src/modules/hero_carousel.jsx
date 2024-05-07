@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Hero from "./hero";
 
 export default function HeroCarousel() {
@@ -60,12 +60,21 @@ export default function HeroCarousel() {
     setCurrentIndex(slideIndex);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNext();
+    }, 5000); // Change the interval duration as needed
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [goToNext]);
   return (
     <div className="relative flex items-center justify-center">
       {/* Previous Button */}
       <button
         onClick={goToPrev}
-        className="absolute flex justify-center items-center left-20 z-10 p-2 bg-gray-200 rounded-full shadow-md cursor-pointer hover:bg-gray-300"
+        className="absolute flex justify-center items-center left-20 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500 "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +109,7 @@ export default function HeroCarousel() {
       {/* Next Button */}
       <button
         onClick={goToNext}
-        className="absolute right-20 z-10 p-2 bg-gray-200 rounded-full shadow-md cursor-pointer hover:bg-gray-300"
+        className="absolute right-20 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -112,21 +121,22 @@ export default function HeroCarousel() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="feather feather-chevron-right"
+          className="feather feather-chevron-right "
         >
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
       </button>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-0 w-full flex justify-center p-4 opacity-50">
-        {heroes.map((_, index) => (
-          <button
-            key={index}
-            className={`h-3 w-3 rounded-full mx-1 ${index === currentIndex ? "bg-[#67d6f8]" : "bg-gray-400"}`}
-            onClick={() => goToSlide(index)}
-          />
-        ))}
+      <div className="absolute bottom-6 w-24 h-2 rounded-lg bg-white opacity-70 shadow-sky-600">
+        <div
+          className="h-full bg-sky-400  transition-all rounded-[3px] duration-500 ease-in-out"
+          style={{
+            width: `(100 / ${heroes.length}) * (+${currentIndex + 1})` + "%",
+            transform: `translateX(${currentIndex * (300 / (heroes.length - 1))}%)`,
+            transition: "transform 0.5s ease-in-out", // Adjust the duration and timing function as needed
+          }}
+        />
       </div>
     </div>
   );
