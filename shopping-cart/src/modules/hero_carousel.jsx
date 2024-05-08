@@ -33,12 +33,12 @@ export default function HeroCarousel() {
       paragraph: `Enjoy capturing those special moments with our portrait collection of cameras.
           Ideal for capturing portraits and 
           family photos. Capture every single smile and laugh with our cameras.`,
-      color: "#ffc24b",
+      color: "#e0c32d",
     },
     {
       image: "/hero_nature.jpg",
       subheader: "Nature Collection",
-      header: "Capture all the beauty of Nature",
+      header: "Capture the beauty of Nature",
       paragraph: `Capture the beauty of the world around you with our newest collection of cameras.
           Lightweight, high-quality and perfect for capturing the stunning
           landscapes, wildlife and vistas. Explore our new
@@ -67,7 +67,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       goToNext();
-    }, 5000); // Change the interval duration as needed
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -76,7 +76,7 @@ export default function HeroCarousel() {
 
   const { subheader, header, paragraph } = heroes[currentIndex];
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center container-lg w-full">
       {/* Previous Button */}
       <button
         onClick={goToPrev}
@@ -101,13 +101,13 @@ export default function HeroCarousel() {
       {/* Hero Carousel */}
       <div
         key={currentIndex}
-        className="flex flex-col justify-between items-center gap-2 px-20 py-8 h-[300px] w-[30vw] m-[] bg-[hsl(0,0%,96%,0.9)] rounded-md text-gray-800 fixed right-80 z-10"
+        className="flex flex-col container-lg justify-between items-center gap-2 px-20 py-8 w-[30vw] m-[] bg-[hsl(0,0%,96%,0.9)] rounded-md text-gray-800 absolute right-80 z-10"
       >
         <div className="flex flex-col gap-1 items-center">
           <p className="text-gray-600 animate-fade-in">{subheader}</p>
           <p className="font-bold text-3xl animate-fade-in">{header}</p>
         </div>
-        <p className="text-base md:text-sm lg:text-base animate-fade-in">
+        <p className="text-base md:text-sm lg:text-base animate-fade-in  mb-4">
           {paragraph}
         </p>
         <button
@@ -129,7 +129,7 @@ export default function HeroCarousel() {
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
-          Explore More
+          <p className="-translate-y-0.5">Explore More</p>
         </button>
       </div>
 
@@ -174,7 +174,7 @@ export default function HeroCarousel() {
           className="h-full bg-sky-400 w-6  transition-all rounded-[3px] duration-500 ease-in-out"
           style={{
             transform: `translateX(${currentIndex * (300 / (heroes.length - 1))}%)`,
-            transition: "transform 0.5s ease-in-out", // Adjust the duration and timing function as needed
+            transition: "transform 0.5s ease-in-out",
           }}
         />
       </div>

@@ -1,13 +1,13 @@
 export default function Header() {
   return (
-    <header className="bg-white shadow flex justify-between items-center px-80 py-4">
+    <header className="bg-white container-lg shadow flex justify-between items-center px-80 py-4">
       <div id="logo" className="">
         <a href="/" to id="button_logo">
           <img src="/logo.svg" alt="Logo" className="h-16 fill-white" />
         </a>
       </div>
 
-      <div id="navigation" className="flex gap-10">
+      <div id="navigation" className="flex gap-16">
         <nav className="flex">
           <ul className="flex gap-10 text-xl *:hover:cursor-pointer">
             <li>
