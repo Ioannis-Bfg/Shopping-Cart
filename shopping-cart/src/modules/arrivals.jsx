@@ -153,7 +153,7 @@ export default function Arrivals() {
           </div>
           <div className="row-span-3 mx-auto my-auto flex items-center py-2 justify-between w-full px-8">
             <div className="flex flex-col items-start">
-              <p className=" text-3xl font-medium text-gray-700">
+              <p className=" text-xl font-medium text-gray-700">
                 FUJIFILM X-T10
               </p>
               <p className="text-gray-600 font-bold text-xl">$1,200</p>
