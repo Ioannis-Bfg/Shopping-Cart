@@ -1,23 +1,27 @@
 export default function Showcase() {
   return (
-    <div className="px-40 py-10 w-full gap-10 grid grid-cols-10  ">
-      <div className="h-[700px] rounded-lg col-span-2  shadow-xl flex justify-center items-center bg-[url('/sale.jpg')] ">
-        <div className=" w-80 aspect-[5/3]  border-4 border-white p-1">
-          <div className="bg-white h-full w-full  flex flex-col gap-1 items-center justify-center">
-            <p className="text-6xl font-black text-gray-900">SALE</p>
-            <p className="text-3xl font-medium text-gray-700">up to 30%</p>
+    <div className="px-40 py-10 w-full gap-10 grid grid-cols-10">
+      <div className="h-[700px] rounded-lg col-span-2  shadow-xl container flex justify-center items-center bg-[url('/sale.jpg')] group/wrap">
+        <div className=" w-80 aspect-[5/3]  border-4 border-white p-1 transition-all duration-200 ease-out cursor-pointer group-hover/wrap:scale-105 group-hover/wrap:transition-all group-hover/wrap:duration-500 group-hover/wrap:ease-out">
+          <div className="bg-white h-full w-full  flex flex-col gap-1 items-center justify-center hover:bg-gray-800 group transition duration-500 ease-out">
+            <p className="text-6xl font-black text-gray-900 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out ">
+              SALE
+            </p>
+            <p className="text-3xl font-medium text-gray-700 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out">
+              up to 30%
+            </p>
           </div>
         </div>
       </div>
-      <div className="h-[700px] rounded-lg col-span-8 bg-gray-100 shadow-xl grid grid-cols-9 px-12 py-12  ">
-        <div className="col-span-3  flex justify-center items-center aspect-square">
+      <div className="h-[700px] rounded-lg col-span-8 shadow-xl grid grid-cols-10 px-40 py-12 bg-gradient-to-t from-gray-100 to-gray-200">
+        <div className="col-span-5 flex justify-start items-center ">
           <img
             src="/showcase.png"
             alt=""
             className="size-[28rem] object-fit aspect-square"
           />
         </div>
-        <div className="col-span-6  py-10 px-10 flex flex-col justify-evenly">
+        <div className="col-span-5 py-10 px-10 flex flex-col justify-between">
           <div className="flex flex-col gap-2">
             <p className="text-5xl font-semibold">Smena 8M</p>
             <p className="w-[72ch]">
@@ -27,9 +31,9 @@ export default function Showcase() {
               condition with their original packaging and documentation
             </p>
           </div>
-          <p className="text-5xl font-bold text-gray-900 mb-20">$480</p>
-          <div className="flex gap-4">
-            <div className="size-20 rounded-md border-2 border-gray-300  flex flex-col items-center">
+          <p className="text-5xl font-bold text-gray-900">$480</p>
+          <div className="flex gap-4 ">
+            <div className="size-20 rounded-md border-2 border-gray-400  flex flex-col items-center">
               <p className="text-md font-semibold p-2 text-gray-600 ">40mm</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +44,7 @@ export default function Showcase() {
                 <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z" />
               </svg>
             </div>
-            <div className="size-20 rounded-md border-2 border-gray-300  flex flex-col items-center">
+            <div className="size-20 rounded-md border-2 border-gray-400  flex flex-col items-center">
               <p className="text-md font-semibold p-2 text-gray-600 ">35mm</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +75,7 @@ export default function Showcase() {
                 <line x1="17" y1="7" x2="22" y2="7"></line>
               </svg>
             </div>
-            <div className="size-20 rounded-md border-2 border-gray-300  flex flex-col items-center">
+            <div className="size-20 rounded-md border-2 border-gray-400  flex flex-col items-center">
               <p className="text-md font-semibold p-2 text-gray-600 ">
                 f4 / f16
               </p>
@@ -96,7 +100,7 @@ export default function Showcase() {
                 <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
               </svg>
             </div>
-            <div className="size-20 rounded-md border-2 border-gray-300 flex flex-col items-center">
+            <div className="size-20 rounded-md border-2 border-gray-400 flex flex-col items-center">
               <p className="text-md font-semibold p-2 text-gray-600 ">8MP</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +120,7 @@ export default function Showcase() {
               </svg>
             </div>
           </div>
-          <button className="bg-sky-500 text-white px-5 py-2 rounded-lg text-xl self-center">
+          <button className="bg-sky-500 text-white px-5 py-2 rounded-lg text-xl self-center transition scale-100 duration-200 ease-in hover:scale-110 hover:transition hover:duration-500 hover:ease out">
             Add to Cart
           </button>
         </div>
