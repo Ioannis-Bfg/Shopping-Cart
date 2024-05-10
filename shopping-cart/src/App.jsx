@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import Review from "./modules/review";
 import Owner from "./modules/owner";
 import Call from "./modules/call";
+import Footer from "./modules/footer";
 // Use React.lazy to dynamically import each module
 const Arrivals = lazy(() => import("./modules/arrivals"));
 const Features = lazy(() => import("./modules/features"));
@@ -31,6 +32,7 @@ export default function App() {
         <Review />
         <Owner />
         <Call />
+        <Footer />
       </>
     </Suspense>
   );
