@@ -24,7 +24,7 @@ export default function HeroCarousel() {
           landscapes and vistas. Capture the memories
           of your adventures with FOS
           today.`,
-      color: "#616161",
+      color: "rgb(14 165 233)",
     },
     {
       image: "/hero_portrait.jpg",
@@ -33,7 +33,7 @@ export default function HeroCarousel() {
       paragraph: `Enjoy capturing those special moments with our portrait collection of cameras.
           Ideal for capturing portraits and 
           family photos. Capture every single smile and laugh with our cameras.`,
-      color: "#e0c32d",
+      color: "rgb(14 165 233)",
     },
     {
       image: "/hero_nature.jpg",
@@ -44,7 +44,7 @@ export default function HeroCarousel() {
           landscapes, wildlife and vistas. Explore our new
           nature collection
           today.`,
-      color: "#56bf0c",
+      color: "rgb(14 165 233)",
     },
   ];
 

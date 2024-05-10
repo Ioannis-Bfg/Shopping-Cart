@@ -1,4 +1,7 @@
 import React, { Suspense, lazy } from "react";
+import Review from "./modules/review";
+import Owner from "./modules/owner";
+import Call from "./modules/call";
 // Use React.lazy to dynamically import each module
 const Arrivals = lazy(() => import("./modules/arrivals"));
 const Features = lazy(() => import("./modules/features"));
@@ -25,8 +28,9 @@ export default function App() {
         <Arrivals />
         <Showcase />
         <Parallax />
-        <Showcase />
-        <Showcase />
+        <Review />
+        <Owner />
+        <Call />
       </>
     </Suspense>
   );

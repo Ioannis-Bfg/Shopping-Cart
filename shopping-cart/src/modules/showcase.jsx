@@ -13,12 +13,12 @@ export default function Showcase() {
           </div>
         </div>
       </div>
-      <div className="h-[700px] rounded-lg col-span-8 shadow-xl grid grid-cols-10 px-40 py-12 bg-gradient-to-t from-gray-100 to-gray-200">
+      <div className="h-[700px] rounded-lg col-span-8 shadow-xl grid grid-cols-10 px-40 py-12 bg-[rgba(221,221,221,0.23)] border-2 border-[#ffffff10] backdrop-blur-sm">
         <div className="col-span-5 flex justify-start items-center ">
           <img
             src="/showcase.png"
             alt=""
-            className="size-[28rem] object-fit aspect-square"
+            className="size-[28rem] min-h-[25rem] min-w-[25rem] object-fit aspect-square grayscale duration-500 ease-in hover:grayscale-0 hover:saturate-150 hover:scale-105 hover:transition hover:duration-500 hover:ease-out"
           />
         </div>
         <div className="col-span-5 py-10 px-10 flex flex-col justify-between">
