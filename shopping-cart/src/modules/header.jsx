@@ -1,33 +1,35 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <header className="bg-white container-lg shadow flex justify-between items-center px-80 py-4">
       <div id="logo" className="">
-        <a href="/" to id="button_logo">
+        <Link to="/" id="button_logo">
           <img src="/logo.svg" alt="Logo" className="h-16 fill-white" />
-        </a>
+        </Link>
       </div>
 
       <div id="navigation" className="flex gap-16">
         <nav className="flex">
           <ul className="flex gap-10 text-xl *:hover:cursor-pointer">
             <li>
-              <a
-                href="#"
+              <Link
+                to={"/"}
                 className="group transition duration-300 flex flex-col gap-1"
               >
                 Home
                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
-              </a>
+              </Link>
             </li>
             <li className="">
               {" "}
-              <a
-                href="#"
+              <Link
+                to="/shop"
                 className="group transition duration-300 flex flex-col gap-1"
               >
                 Shop
                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
-              </a>
+              </Link>
             </li>
             <li className="">
               {" "}

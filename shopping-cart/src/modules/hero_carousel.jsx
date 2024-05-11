@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Hero from "./hero";
+import { Link } from "react-router-dom";
 
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -110,7 +111,8 @@ export default function HeroCarousel() {
         <p className="text-base md:text-sm lg:text-base animate-fade-in  mb-4">
           {paragraph}
         </p>
-        <button
+        <Link
+          to="/shop"
           style={{ backgroundColor: heroes[currentIndex].color }}
           className="items-center transition-all ease-in duration-200 flex gap-2 hover:gap-4 hover:bg-sky-500 hover:transition-all hover:ease-out hover:duration-[500ms] px-5 py-3 text-white font-semibold rounded-md"
         >
@@ -130,7 +132,7 @@ export default function HeroCarousel() {
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
           <p className="-translate-y-0.5">Explore More</p>
-        </button>
+        </Link>
       </div>
 
       {/* Carousel Slides */}

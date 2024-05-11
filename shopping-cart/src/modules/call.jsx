@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Call() {
   return (
     <div
@@ -10,7 +11,10 @@ export default function Call() {
           alt="call_to_action"
           className="absolute transition hover:transition rounded-lg h-full w-full object-cover"
         />
-        <button className="text-5xl flex gap-4 items-center font-semibold absolute text-gray-700 rounded-md bg-white px-12 py-7 border-2 border-white group/btn hover:bg-sky-600 hover:text-white hover:transition hover:duration-300">
+        <Link
+          to="/shop"
+          className="text-5xl flex gap-4 items-center font-semibold absolute text-gray-700 rounded-md bg-white px-12 py-7 border-2 border-white group/btn hover:bg-sky-600 hover:text-white hover:transition hover:duration-300"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -28,7 +32,7 @@ export default function Call() {
             <path d="M16 10a4 4 0 0 1-8 0"></path>
           </svg>
           <p>SHOP NOW</p>
-        </button>
+        </Link>
       </div>
     </div>
   );

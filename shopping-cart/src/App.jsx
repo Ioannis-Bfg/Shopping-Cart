@@ -1,9 +1,11 @@
 import React, { Suspense, lazy } from "react";
-import Review from "./modules/review";
-import Owner from "./modules/owner";
-import Call from "./modules/call";
-import Footer from "./modules/footer";
-// Use React.lazy to dynamically import each module
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+
+const Review = lazy(() => import("./modules/review"));
+const Owner = lazy(() => import("./modules/owner"));
+const Call = lazy(() => import("./modules/call"));
+const Footer = lazy(() => import("./modules/footer"));
+const Shop = lazy(() => import("./modules/shop"));
 const Arrivals = lazy(() => import("./modules/arrivals"));
 const Features = lazy(() => import("./modules/features"));
 const Header = lazy(() => import("./modules/header"));
@@ -12,8 +14,36 @@ const Parallax = lazy(() => import("./modules/parallax"));
 const Showcase = lazy(() => import("./modules/showcase"));
 
 export default function App() {
-  // Wrap your components with Suspense and provide a fallback
-  // Fallback can be a spinner, loading indicator, or any placeholder
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <Header />
+          <HeroCarousel />
+          <Features />
+          <Arrivals />
+          <Showcase />
+          <Parallax />
+          <Review />
+          <Owner />
+          <Call />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "shop",
+      element: (
+        <>
+          <Header />
+          <Shop />
+          <Footer />
+        </>
+      ),
+    },
+  ]);
+
   return (
     <Suspense
       fallback={
@@ -22,18 +52,7 @@ export default function App() {
         </div>
       }
     >
-      <>
-        <Header />
-        <HeroCarousel />
-        <Features />
-        <Arrivals />
-        <Showcase />
-        <Parallax />
-        <Review />
-        <Owner />
-        <Call />
-        <Footer />
-      </>
+      <RouterProvider router={router} />
     </Suspense>
   );
 }
