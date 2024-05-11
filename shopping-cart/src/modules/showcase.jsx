@@ -1,8 +1,8 @@
 export default function Showcase() {
   return (
     <div className="px-40 py-10 w-full gap-10 grid grid-cols-10">
-      <div className="h-[700px] rounded-lg col-span-2  shadow-xl container flex justify-center items-center bg-[url('/sale.jpg')] group/wrap">
-        <div className=" w-80 aspect-[5/3]  border-4 border-white p-1 transition-all duration-200 ease-out cursor-pointer group-hover/wrap:scale-105 group-hover/wrap:transition-all group-hover/wrap:duration-500 group-hover/wrap:ease-out">
+      <div className="h-[700px] rounded-lg col-span-2 px-4  shadow-xl container flex justify-center items-center bg-[url('/sale.jpg')] group/wrap">
+        <div className="aspect-[5/3] w-80 min-w-44 max-w-80 border-4  border-white p-1 transition-all duration-200 ease-out cursor-pointer group-hover/wrap:scale-105 group-hover/wrap:transition-all group-hover/wrap:duration-500 group-hover/wrap:ease-out">
           <div className="bg-white h-full w-full  flex flex-col gap-1 items-center justify-center hover:bg-gray-800 group transition duration-500 ease-out">
             <p className="text-6xl font-black text-gray-900 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out ">
               SALE
