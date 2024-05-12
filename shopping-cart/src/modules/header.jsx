@@ -1,16 +1,28 @@
 import { Link } from "react-router-dom";
 import "./header.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header({ scrollY }) {
   const [isHeaderOpaque, setIsHeaderOpaque] = useState(true);
+  let navigate = useNavigate();
 
   useEffect(() => {
     const halfScreen = window.innerHeight / 2;
     setIsHeaderOpaque(scrollY > halfScreen);
   }, [scrollY]);
 
-  const headerClasses = `bg-white container-lg h-[100px] shadow flex justify-between items-center px-80 overflow-hidden py-4 sticky top-0 z-50 ${
+  const handleAboutUsClick = (event) => {
+    event.preventDefault();
+    navigate("/");
+    setTimeout(() => {
+      document
+        .getElementById("owner-section")
+        .scrollIntoView({ behavior: "smooth" });
+    }, 400);
+  };
+
+  const headerClasses = `bg-white container-lg h-[100px] shadow flex justify-between items-center px-80 overflow-hidden py-4 sticky top-0 z-[1000] ${
     isHeaderOpaque
       ? "header-opacity-transition"
       : "header-opacity-transition opacity-transition"
@@ -166,7 +178,9 @@ export default function Header({ scrollY }) {
               <Link to="/shop">SHOP</Link>
             </li>
             <li>
-              <Link to={"/about"}>ABOUT US</Link>
+              <a onClick={handleAboutUsClick} className="cursor-pointer">
+                ABOUT US
+              </a>
             </li>
             <li>
               <Link to={"/q&a"}>Q&A</Link>

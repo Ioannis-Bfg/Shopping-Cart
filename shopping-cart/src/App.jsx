@@ -19,7 +19,18 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Restore scroll position on mount
+    const savedScrollY = localStorage.getItem("scrollY");
+    if (savedScrollY) {
+      window.scrollTo(0, parseInt(savedScrollY));
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      // Save scroll position on unmount
+      localStorage.setItem("scrollY", scrollY.toString());
+    };
   }, []);
 
   const router = createBrowserRouter([

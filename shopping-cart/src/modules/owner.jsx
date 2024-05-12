@@ -1,7 +1,7 @@
 export default function Owner() {
   return (
     <section
-      id="owner"
+      id="owner-section"
       className="w-full h-[400px] bg-center bg-cover bg-owner "
     >
       <div className="flex justify-center items-center gap-20 py-20 px-80 ">
