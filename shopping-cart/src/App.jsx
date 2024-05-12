@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
 const Review = lazy(() => import("./modules/review"));
@@ -14,12 +14,20 @@ const Parallax = lazy(() => import("./modules/parallax"));
 const Showcase = lazy(() => import("./modules/showcase"));
 
 export default function App() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <>
-          <Header />
+          <Header scrollY={scrollY} />
           <HeroCarousel />
           <Features />
           <Arrivals />
@@ -36,7 +44,7 @@ export default function App() {
       path: "shop",
       element: (
         <>
-          <Header />
+          <Header scrollY={scrollY} />
           <Shop />
           <Footer />
         </>
