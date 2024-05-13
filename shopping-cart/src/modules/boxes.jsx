@@ -11,20 +11,23 @@ export default function Boxes() {
       currentDiv = currentDiv.parentElement;
     }
     currentDiv.style.flex = "2";
-    currentDiv.style.transition = "all 0.3s ease-in-out";
+    currentDiv.style.transition = "all 0.4s ease-out";
     currentDiv.style.opacity = "1";
     currentDiv.style.color = "white";
+
     currentDiv.style.backgroundColor = "rgb(14 165 233)";
     const infoDiv = currentDiv.querySelector("#info");
     infoDiv.style.height = "fit-content";
     infoDiv.style.width = "fit-content";
     infoDiv.style.padding = "20px";
+    infoDiv.style.opacity = "1";
     infoDiv.style.borderWidth = "4px";
+    infoDiv.style.transition = "all 0.3s ease-in";
     ids.forEach((id) => {
       if (id !== currentDiv.id) {
         const otherDiv = document.getElementById(id);
         otherDiv.style.flex = "1";
-        otherDiv.style.opacity = "0.9";
+        otherDiv.style.opacity = "0.8";
         otherDiv.style.backgroundColor = "rgb(249 250 251)";
         otherDiv.style.color = "rgb(2 132 199)";
         const otherInfoDiv = otherDiv.querySelector("#info");
@@ -41,10 +44,10 @@ export default function Boxes() {
   };
   return (
     <>
-      <div className="flex h-[200px] justify-center items-center gap-4 px-[20rem] py-20 my-40">
+      <div className="flex h-[200px] justify-center items-center gap-4 px-[20rem] py-40 my-20">
         <div
           id="div-1"
-          className="bg-gray-50 border-4 border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden py-40 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
+          className="bg-gray-50 border-4  border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden py-40 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -69,7 +72,10 @@ export default function Boxes() {
             </div>
             <div
               id="info"
-              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
+              style={{
+                opacity: "0",
+              }}
+              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md "
             >
               As a certified camera seller, we ensure the highest quality
               cameras and equipment to capture your memories with ease. We stand
@@ -105,6 +111,9 @@ export default function Boxes() {
             </div>
             <div
               id="info"
+              style={{
+                opacity: "0",
+              }}
               className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
             >
               We offer free shipping on all orders over $100. We want to make it
@@ -142,6 +151,9 @@ export default function Boxes() {
             </div>
             <div
               id="info"
+              style={{
+                opacity: "0",
+              }}
               className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
             >
               As a certified camera seller, we ensure the highest quality

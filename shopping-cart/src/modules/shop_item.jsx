@@ -1,6 +1,21 @@
-export default function ShopItem({ imageUrl, isNew, isSale, model, price }) {
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+export default function ShopItem({
+  id,
+  imageUrl,
+  isNew,
+  isSale,
+  model,
+  price,
+}) {
   return (
-    <div className=" bg-white  h-[300px] group max-w-60 overflow-hidden min-w-60 p-4 grid grid-rows-10 shadow-sm">
+    <Link
+      key={id}
+      to={`/item/${id}`}
+      className=" bg-white  h-[300px] group max-w-60 overflow-hidden min-w-60 p-4 grid grid-rows-10 shadow-sm"
+    >
       <div className=" overflow-hidden relative aspect-square w-full bg-black  row-span-4 ">
         <div className=" absolute z-10 left-3 top-3 flex items-center">
           {isNew && (
@@ -36,7 +51,7 @@ export default function ShopItem({ imageUrl, isNew, isSale, model, price }) {
           <p className=" text-md font-medium text-gray-700">{model}</p>
           <p className="text-gray-600 font-bold text-lg">{price}</p>
         </div>
-        <button>
+        {/* <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -53,8 +68,8 @@ export default function ShopItem({ imageUrl, isNew, isSale, model, price }) {
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
-        </button>
+        </button> */}
       </div>
-    </div>
+    </Link>
   );
 }

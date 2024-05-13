@@ -3,7 +3,7 @@ import ShopItem from "./shop_item";
 
 import React, { useState } from "react";
 
-export default function Shop() {
+export default function Shop({ shopItems }) {
   const [showSaleItems, setShowSaleItems] = useState(false);
   const [showNewItems, setShowNewItems] = useState(false);
 
@@ -14,163 +14,6 @@ export default function Shop() {
   const handleNewCheckboxChange = (event) => {
     setShowNewItems(event.target.checked);
   };
-
-  const shopItems = [
-    {
-      imageUrl: "/arrival1.jpg",
-      isNew: true,
-      isSale: true,
-      model: "Canon EOS 80D",
-      price: "$899",
-    },
-    {
-      imageUrl: "/arrival2.jpg",
-      isNew: true,
-      model: "Nikon D3500",
-      price: "$799",
-    },
-    {
-      imageUrl: "/arrival3.jpg",
-      model: "Sony Alpha a6400",
-      price: "$699",
-    },
-    {
-      imageUrl: "/arrival4.jpg",
-      model: "Fujifilm X-T3",
-      price: "$1299",
-    },
-    {
-      imageUrl: "/arrival5.jpg",
-      model: "Panasonic Lumix GH5",
-      price: "$1999",
-    },
-    {
-      imageUrl: "/arrival1.jpg",
-      isNew: true,
-      model: "Sony Alpha a7R III",
-      price: "$2999",
-    },
-    {
-      imageUrl: "/arrival2.jpg",
-      isNew: true,
-      model: "Nikon D850",
-      price: "$2999",
-    },
-    {
-      imageUrl: "/arrival3.jpg",
-      model: "Canon EOS 5D Mark IV",
-      price: "$2499",
-      isSale: true,
-    },
-    {
-      imageUrl: "/arrival4.jpg",
-      model: "Fujifilm X-T20",
-      price: "$1499",
-    },
-    {
-      imageUrl: "/arrival5.jpg",
-      model: "Sony Alpha a7 III",
-      price: "$1499",
-    },
-    {
-      imageUrl: "/arrival1.jpg",
-      isNew: true,
-      model: "Nikon D3400",
-      price: "$699",
-    },
-    {
-      imageUrl: "/arrival2.jpg",
-      model: "Panasonic Lumix GH5s",
-      isSale: true,
-      price: "$1799",
-    },
-    {
-      imageUrl: "/arrival3.jpg",
-      model: "Canon EOS 7D Mark II",
-      price: "$1499",
-    },
-    {
-      imageUrl: "/arrival4.jpg",
-      isNew: true,
-      model: "Fujifilm X-T200",
-      isSale: true,
-      price: "$1999",
-    },
-    {
-      imageUrl: "/arrival5.jpg",
-      model: "Sony Alpha a9",
-      price: "$2999",
-    },
-    {
-      imageUrl: "/arrival1.jpg",
-      model: "Nikon D3500",
-      price: "$799",
-    },
-    {
-      imageUrl: "/arrival2.jpg",
-      model: "Canon EOS 5D Mark IV",
-      price: "$2499",
-    },
-    {
-      imageUrl: "/arrival3.jpg",
-      model: "Sony Alpha a6400",
-      price: "$699",
-    },
-    {
-      imageUrl: "/arrival4.jpg",
-      model: "Fujifilm X-T3",
-      price: "$1299",
-    },
-    {
-      imageUrl: "/arrival2.jpg",
-      isNew: true,
-      model: "Nikon D3500",
-      price: "$799",
-    },
-    {
-      imageUrl: "/arrival3.jpg",
-      model: "Sony Alpha a6400",
-      price: "$699",
-    },
-    {
-      imageUrl: "/arrival4.jpg",
-      model: "Fujifilm X-T3",
-      price: "$1299",
-    },
-    {
-      imageUrl: "/arrival5.jpg",
-      model: "Panasonic Lumix GH5",
-      price: "$1999",
-    },
-    {
-      imageUrl: "/arrival1.jpg",
-      isNew: true,
-      model: "Sony Alpha a7R III",
-      price: "$2999",
-    },
-    {
-      imageUrl: "/arrival2.jpg",
-      isNew: true,
-      model: "Nikon D850",
-      price: "$2999",
-    },
-    {
-      imageUrl: "/arrival3.jpg",
-      model: "Canon EOS 5D Mark IV",
-      price: "$2499",
-      isSale: true,
-    },
-    {
-      imageUrl: "/arrival4.jpg",
-      model: "Fujifilm X-T20",
-      price: "$1499",
-    },
-    {
-      imageUrl: "/arrival5.jpg",
-      model: "Sony Alpha a7 III",
-      price: "$1499",
-    },
-  ];
 
   const filteredShopItems = shopItems.filter((item) => {
     if (showSaleItems && showNewItems) {
@@ -199,7 +42,7 @@ export default function Shop() {
                 <input
                   type="checkbox"
                   id="showSaleItems"
-                  className="form-checkbox h-5 w-5 text-gray-600 opacity-80"
+                  className="form-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   checked={showSaleItems}
                   onChange={handleSaleCheckboxChange}
                 />
@@ -216,7 +59,7 @@ export default function Shop() {
                 <input
                   type="checkbox"
                   id="showNewItems"
-                  className="form-checkbox h-5 w-5 text-gray-600 opacity-80"
+                  className="form-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   checked={showNewItems}
                   onChange={handleNewCheckboxChange}
                 />
@@ -238,7 +81,8 @@ export default function Shop() {
         >
           {filteredShopItems.map((item, index) => (
             <ShopItem
-              key={index}
+              key={item.id} // make sure each item has a unique 'id' property
+              id={item.id}
               imageUrl={item.imageUrl}
               isNew={item.isNew}
               isSale={item.isSale}
