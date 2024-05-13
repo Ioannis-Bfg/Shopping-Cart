@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import Boxes from "./modules/boxes";
 
 const Review = lazy(() => import("./modules/review"));
 const Owner = lazy(() => import("./modules/owner"));
@@ -40,13 +41,14 @@ export default function App() {
         <>
           <Header scrollY={scrollY} />
           <HeroCarousel />
-          <Features />
+          <Boxes />
           <Arrivals />
           <Showcase />
           <Parallax />
           <Review />
           <Owner />
           <Call />
+
           <Footer />
         </>
       ),
