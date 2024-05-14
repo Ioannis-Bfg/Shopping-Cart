@@ -37,7 +37,7 @@ export default function App() {
   //   };
   // }, []);
 
-  const shoppingCart = [];
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   const shopItems = [
     {
@@ -223,6 +223,13 @@ export default function App() {
       price: "1499",
     },
   ];
+  const item_cart = function (item) {
+    return {
+      id: item.id,
+      quantity: 1,
+      item: item,
+    };
+  };
 
   function addToCart(item) {
     const existingCartItemIndex = shoppingCart.findIndex(
@@ -232,17 +239,48 @@ export default function App() {
       shoppingCart[existingCartItemIndex].quantity += 1;
     } else {
       const temp = item_cart(item);
-      shoppingCart.push(temp);
+      setShoppingCart([...shoppingCart, temp]);
     }
   }
 
-  const item_cart = function (item) {
-    return {
-      id: item.id,
-      quantity: 1,
-      item: item,
-    };
-  };
+  function decQuantity(item) {
+    console.log("updated");
+    setShoppingCart((prevCart) => {
+      const updatedCart = [...prevCart];
+      const existingCartItemIndex = updatedCart.findIndex(
+        (cartItem) => cartItem.id === item.id,
+      );
+      if (existingCartItemIndex !== -1) {
+        if (updatedCart[existingCartItemIndex].quantity > 1) {
+          updatedCart[existingCartItemIndex].quantity -= 1;
+        } else {
+          updatedCart.splice(existingCartItemIndex, 1);
+        }
+      }
+      return updatedCart;
+    });
+    console.log(item.quantity);
+  }
+
+  function incQuantity(item) {
+    setShoppingCart((prevCart) => {
+      const updatedCart = [...prevCart];
+      const existingCartItemIndex = updatedCart.findIndex(
+        (cartItem) => cartItem.id === item.id,
+      );
+      if (existingCartItemIndex !== -1) {
+        updatedCart[existingCartItemIndex].quantity += 1;
+      }
+      return updatedCart;
+    });
+  }
+
+  function remove(item) {
+    setShoppingCart((prevCart) => {
+      calculateTotal();
+      return prevCart.filter((cartItem) => cartItem.id !== item.id);
+    });
+  }
 
   const [total, setTotal] = useState(0);
 
@@ -300,9 +338,17 @@ export default function App() {
 
           <Route
             path="/cart"
-            element={<Cart shoppingCart={shoppingCart} total={total} />}
+            element={
+              <Cart
+                shoppingCart={shoppingCart}
+                total={total}
+                decQuantity={decQuantity}
+                incQuantity={incQuantity}
+                remove={remove}
+                calculateTotal={calculateTotal}
+              />
+            }
           />
-          {/* Add other routes here as needed */}
         </Routes>
         <Footer />
       </BrowserRouter>
