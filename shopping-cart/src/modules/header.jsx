@@ -198,7 +198,10 @@ export default function Header({ scrollY }) {
           </ul>
         </nav>
 
-        <div id="nav_buttons" className="flex gap-3 c *:hover:cursor-pointer">
+        <div
+          id="nav_buttons"
+          className="flex gap-3 c *:hover:cursor-pointer items-center"
+        >
           <button
             id="search_icon"
             className="transition ease-in duration-200  hover:scale-110 hover:transition hover:ease-out hover:duration-[500ms]"
@@ -219,9 +222,12 @@ export default function Header({ scrollY }) {
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </button>
-          <button
+          <Link
+            to={"/cart"}
             id="shopping_cart_icon"
-            className="transition ease-in duration-200  hover:scale-110 hover:transition hover:ease-out hover:duration-[500ms]"
+            className="transition ease-in duration-200
+            hover:scale-110 hover:transition hover:ease-out
+            hover:duration-[500ms]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +245,7 @@ export default function Header({ scrollY }) {
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </header>

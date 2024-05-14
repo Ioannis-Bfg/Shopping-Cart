@@ -49,7 +49,7 @@ export default function ShopItem({
       <div className="flex items-center justify-between  w-full z-50 row-span-2 row-start-9">
         <div className="flex flex-col items-start">
           <p className=" text-md font-medium text-gray-700">{model}</p>
-          <p className="text-gray-600 font-bold text-lg">{price}</p>
+          <p className="text-gray-600 font-bold text-lg">${price}</p>
         </div>
         {/* <button>
           <svg

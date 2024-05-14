@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ShopItem from "./shop_item";
 
-export default function ItemDetails({ shopItems }) {
+export default function ItemDetails({ shopItems, addToCart }) {
   const { id } = useParams();
   const camera = shopItems.find((item) => item.id === Number(id));
   const currentItemId = Number(id);
@@ -31,7 +31,7 @@ export default function ItemDetails({ shopItems }) {
         <div className="bg-white px-20 py-10 pl-32 flex flex-col -translate-x-24 z-1 justify-between gap-3 shadow-md rounded-md">
           <div>
             <p className="text-3xl font-semibold">{camera.model}</p>
-            <p className="text-xl">{camera.price}</p>
+            <p className="text-xl">${camera.price}</p>
           </div>
           <p className="w-[68ch]">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
@@ -46,7 +46,10 @@ export default function ItemDetails({ shopItems }) {
               <li>Spec 3</li>
             </ul>
           </div>
-          <button className="bg-sky-500 font-semibold hover:bg-sky-600 text-white px-4 py-2 rounded self-center">
+          <button
+            className="bg-sky-500 font-semibold hover:bg-sky-600 text-white px-4 py-2 rounded self-center"
+            onClick={() => addToCart(camera)}
+          >
             Add to cart
           </button>
           <p className="font-thin text-md text-gray-700 self-center">
