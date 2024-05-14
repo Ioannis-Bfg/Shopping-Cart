@@ -19,7 +19,7 @@ export default function ItemDetails({ shopItems }) {
   }
 
   return (
-    <div className="h-full py-60 w-full bg-slate-100 flex flex-col justify-center gap-10 items-center relative">
+    <div className="h-full py-20 w-full bg-slate-100 flex flex-col justify-center gap-10 items-center relative">
       <div className="flex justify-center items-center">
         <div className="flex flex-col justify-center items-center shadow-lg z-10  rounded-md">
           <img
@@ -49,12 +49,15 @@ export default function ItemDetails({ shopItems }) {
           <button className="bg-sky-500 font-semibold hover:bg-sky-600 text-white px-4 py-2 rounded self-center">
             Add to cart
           </button>
+          <p className="font-thin text-md text-gray-700 self-center">
+            In stock: Delivery withing 2-3 working days
+          </p>
         </div>
       </div>
 
       <Link
         to="/shop"
-        className="fixed z-50 top-32 left-32 flex gap-2 items-center justify-center text-white bg-sky-500 hover:bg-sky-600 p-3 rounded-full"
+        className="fixed z-50 top-32 left-32 flex gap-2 items-center justify-center text-white bg-sky-600 hover:bg-sky-700 p-3 rounded-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -75,8 +78,18 @@ export default function ItemDetails({ shopItems }) {
         <p className="text-current -translate-y-0.5">Shop</p>
       </Link>
 
-      <div className="flex flex-col gap-20 py-10 items-center ">
-        <p className="text-3xl font-bold ">Specifications</p>
+      <div className="flex flex-col gap-20 py-10 items-center bg-sky-500 w-full text-white ">
+        <div className="flex gap-2 items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="fill-current size-10"
+          >
+            <title>list-box-outline</title>
+            <path d="M11 15H17V17H11V15M9 7H7V9H9V7M11 13H17V11H11V13M11 9H17V7H11V9M9 11H7V13H9V11M21 5V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H19C20.1 3 21 3.9 21 5M19 5H5V19H19V5M9 15H7V17H9V15Z" />
+          </svg>
+          <p className="text-3xl font-bold ">Specifications</p>
+        </div>
         <div className="flex gap-12 items-center">
           <div className="flex flex-col gap-3">
             <p className="text-2xl font-semibold">Header</p>

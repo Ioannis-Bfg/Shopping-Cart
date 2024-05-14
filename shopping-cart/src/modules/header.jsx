@@ -22,6 +22,14 @@ export default function Header({ scrollY }) {
     }, 400);
   };
 
+  const handleFAQClick = (event) => {
+    event.preventDefault();
+    navigate("/");
+    setTimeout(() => {
+      document.getElementById("FAQ").scrollIntoView({ behavior: "smooth" });
+    }, 400);
+  };
+
   const headerClasses = `bg-white container-lg h-[100px] shadow flex justify-between items-center px-80 overflow-hidden py-4 sticky top-0 z-[1000] ${
     isHeaderOpaque
       ? "header-opacity-transition"
@@ -183,7 +191,9 @@ export default function Header({ scrollY }) {
               </a>
             </li>
             <li>
-              <Link to={"/q&a"}>Q&A</Link>
+              <a className="cursor-pointer" onClick={handleFAQClick}>
+                FAQ
+              </a>
             </li>
           </ul>
         </nav>

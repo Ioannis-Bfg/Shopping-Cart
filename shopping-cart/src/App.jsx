@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Boxes from "./modules/boxes";
 import ScrollToTop from "./modules/scroll";
 import ItemDetails from "./modules/item_details";
+import Faq from "./modules/faq";
 
 const Review = lazy(() => import("./modules/review"));
 const Owner = lazy(() => import("./modules/owner"));
@@ -245,6 +246,7 @@ export default function App() {
                 <Review />
                 <Owner />
                 <Call />
+                <Faq />
               </>
             }
           />
