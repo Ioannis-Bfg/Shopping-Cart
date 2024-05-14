@@ -21,11 +21,11 @@ export default function ItemDetails({ shopItems, addToCart }) {
   return (
     <div className="h-full py-20 w-full bg-slate-100 flex flex-col justify-center gap-10 items-center relative">
       <div className="flex justify-center items-center">
-        <div className="flex flex-col justify-center items-center shadow-lg z-10  rounded-md">
+        <div className="flex flex-col justify-center items-center shadow-lg z-10 size-[30rem]  rounded-md">
           <img
             src={camera.imageUrl}
             alt=""
-            className="w-full h-full rounded-md"
+            className="w-full h-full rounded-md object-cover"
           />
         </div>
         <div className="bg-white px-20 py-10 pl-32 flex flex-col -translate-x-24 z-1 justify-between gap-3 shadow-md rounded-md">
@@ -47,7 +47,7 @@ export default function ItemDetails({ shopItems, addToCart }) {
             </ul>
           </div>
           <button
-            className="bg-sky-500 font-semibold hover:bg-sky-600 text-white px-4 py-2 rounded self-center"
+            className="bg-sky-500 font-semibold hover:bg-sky-600 text-white px-4 py-2 rounded self-center active:translate-y-1 active:transition-all"
             onClick={() => addToCart(camera)}
           >
             Add to cart

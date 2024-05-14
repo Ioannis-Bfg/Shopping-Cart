@@ -49,7 +49,7 @@ export default function Cart({
             {shoppingCart.map((cartItem) => (
               <div
                 key={cartItem.id}
-                className="flex justify-between bg-white p-4 pb-8 rounded-md shadow-md "
+                className="flex justify-between bg-white p-4 pb-10 rounded-md shadow-md "
               >
                 <div className="flex gap-4">
                   <div className="size-20 ">
@@ -58,6 +58,9 @@ export default function Cart({
                       alt={cartItem.item.model}
                       className="object-cover w-full h-full rounded-md"
                     />
+                    <p className="text-sm font-thin mt-2 truncate">
+                      Delivered at your house withing 2-3 working days
+                    </p>
                   </div>
                   <p className="text-lg font-thin">{cartItem.item.model}</p>
                 </div>
@@ -138,8 +141,14 @@ export default function Cart({
               </div>
             ))}
           </div>
-          <div className="bg-slate-300 col-span-2 rounded-md">
-            Total: {total}
+          <div className=" col-span-2 rounded-md flex flex-col  gap-4 p-4 justify-start items-center">
+            <div className="flex  gap-2 justify-center items-center bg-white p-8 rounded-md">
+              <p className="text-3xl">Your total is</p>
+              <p className="text-3xl font-bold">${total}</p>
+            </div>
+            <button className="bg-sky-500 font-semibold hover:bg-sky-600 text-white px-4 py-2 rounded">
+              Checkout
+            </button>
           </div>
         </div>
       </div>

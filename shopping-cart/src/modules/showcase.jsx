@@ -1,16 +1,21 @@
+import { Link } from "react-router-dom";
+
 export default function Showcase() {
   return (
     <div className="px-40 py-10 w-full gap-10 grid grid-cols-10">
       <div className="h-[700px] rounded-lg col-span-2 px-4  shadow-xl container flex justify-center items-center bg-[url('/sale.jpg')] group/wrap">
         <div className="aspect-[5/3] w-80 min-w-44 max-w-80 border-4  border-white p-1 transition-all duration-200 ease-out cursor-pointer group-hover/wrap:scale-105 group-hover/wrap:transition-all group-hover/wrap:duration-500 group-hover/wrap:ease-out">
-          <div className="bg-white h-full w-full  flex flex-col gap-1 items-center justify-center hover:bg-gray-800 group transition duration-500 ease-out">
+          <Link
+            to="/shop"
+            className="bg-white h-full w-full  flex flex-col gap-1 items-center justify-center hover:bg-gray-800 group transition duration-500 ease-out"
+          >
             <p className="text-6xl font-black text-gray-900 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out ">
               SALE
             </p>
-            <p className="text-3xl font-medium text-gray-700 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out">
+            <p className="text-2xl font-medium text-gray-700 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out">
               up to 30%
             </p>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="h-[700px] rounded-lg col-span-8 shadow-xl grid grid-cols-10 px-40 py-12 bg-[rgba(221,221,221,0.23)] border-2 border-[#ffffff10] backdrop-blur-sm">
@@ -120,9 +125,9 @@ export default function Showcase() {
               </svg>
             </div>
           </div>
-          <button className="bg-sky-500 text-white px-5 py-2 rounded-lg text-xl self-center transition scale-100 duration-200 ease-in hover:scale-110 hover:transition hover:duration-500 hover:ease out">
+          {/* <button className="bg-sky-500 text-white px-5 py-2 rounded-lg text-xl self-center transition scale-100 duration-200 ease-in hover:scale-110 hover:transition hover:duration-500 hover:ease out">
             Add to Cart
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

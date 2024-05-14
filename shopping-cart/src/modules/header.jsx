@@ -3,14 +3,20 @@ import "./header.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Header({ scrollY }) {
+export default function Header({ scrollY, shoppingCart }) {
   const [isHeaderOpaque, setIsHeaderOpaque] = useState(true);
+  const [isCartNotEmpty, setIsCartNotEmpty] = useState(false); // This state will track whether the cart is empty
   let navigate = useNavigate();
 
   useEffect(() => {
     const halfScreen = window.innerHeight / 2;
     setIsHeaderOpaque(scrollY > halfScreen);
   }, [scrollY]);
+
+  useEffect(() => {
+    // Set isCartNotEmpty to true if the shopping cart is not empty
+    setIsCartNotEmpty(shoppingCart.length > 0);
+  }, [shoppingCart]);
 
   const handleAboutUsClick = (event) => {
     event.preventDefault();
@@ -30,7 +36,7 @@ export default function Header({ scrollY }) {
     }, 400);
   };
 
-  const headerClasses = `bg-white container-lg h-[100px] shadow flex justify-between items-center px-80 overflow-hidden py-4 sticky top-0 z-[1000] ${
+  const headerClasses = `bg-white container-lg h-[100px] shadow flex justify-between items-center px-40 overflow-hidden py-4 sticky top-0 z-[1000] ${
     isHeaderOpaque
       ? "header-opacity-transition"
       : "header-opacity-transition opacity-transition"
@@ -235,15 +241,15 @@ export default function Header({ scrollY }) {
               height="24"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke={isCartNotEmpty ? "#0ea5e9" : "currentColor"}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="feather feather-shopping-bag stroke-current"
+              className="feather feather-shopping-bag "
             >
-              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
           </Link>
         </div>

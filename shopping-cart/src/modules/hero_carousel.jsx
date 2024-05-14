@@ -102,15 +102,13 @@ export default function HeroCarousel() {
       {/* Hero Carousel */}
       <div
         key={currentIndex}
-        className="flex flex-col container-lg justify-between items-center gap-2 px-20 py-8 w-[30vw] m-[] bg-[hsl(0,0%,96%,0.9)] rounded-md text-gray-800 absolute right-80 z-10"
+        className="flex flex-col container-lg justify-between items-center gap-2 px-20 py-8 w-[30vw]  bg-[hsl(0,0%,96%,0.9)] rounded-md text-gray-800 absolute right-80 z-10"
       >
         <div className="flex flex-col gap-1 items-center">
           <p className="text-gray-600 animate-fade-in">{subheader}</p>
           <p className="font-bold text-3xl animate-fade-in">{header}</p>
         </div>
-        <p className="text-base md:text-sm lg:text-base animate-fade-in  mb-4">
-          {paragraph}
-        </p>
+        <p className="text-sm  animate-fade-in  mb-4">{paragraph}</p>
         <Link
           to="/shop"
           style={{ backgroundColor: heroes[currentIndex].color }}

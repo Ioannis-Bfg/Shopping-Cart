@@ -18,24 +18,20 @@ const Parallax = lazy(() => import("./modules/parallax"));
 const Showcase = lazy(() => import("./modules/showcase"));
 
 export default function App() {
-  // const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(() => {
+    const savedScrollY = localStorage.getItem("scrollY");
+    return savedScrollY ? parseInt(savedScrollY) : 0;
+  });
 
-  // useEffect(() => {
-  //   const handleScroll = () => setScrollY(window.scrollY);
-  //   window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
 
-  //   // Restore scroll position on mount
-  //   const savedScrollY = localStorage.getItem("scrollY");
-  //   if (savedScrollY) {
-  //     window.scrollTo(0, parseInt(savedScrollY));
-  //   }
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     // Save scroll position on unmount
-  //     localStorage.setItem("scrollY", scrollY.toString());
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      localStorage.setItem("scrollY", scrollY.toString());
+    };
+  }, []);
 
   const [shoppingCart, setShoppingCart] = useState([]);
 
@@ -75,47 +71,47 @@ export default function App() {
     },
     {
       id: 6,
-      imageUrl: "/arrival1.jpg",
+      imageUrl: "/arrival6.jpg",
       isNew: true,
       model: "Sony Alpha a7R III",
       price: "2999",
     },
     {
       id: 7,
-      imageUrl: "/arrival2.jpg",
+      imageUrl: "/arrival7.jpg",
       isNew: true,
       model: "Nikon D850",
       price: "2999",
     },
     {
       id: 8,
-      imageUrl: "/arrival3.jpg",
+      imageUrl: "/arrival8.jpg",
       model: "Canon EOS 5D Mark IV",
       price: "2499",
       isSale: true,
     },
     {
       id: 9,
-      imageUrl: "/arrival4.jpg",
+      imageUrl: "/arrival9.jpg",
       model: "Fujifilm X-T20",
       price: "1499",
     },
     {
       id: 10,
-      imageUrl: "/arrival5.jpg",
+      imageUrl: "/arrival10.jpg",
       model: "Sony Alpha a7 III",
       price: "1499",
     },
     {
       id: 11,
-      imageUrl: "/arrival1.jpg",
+      imageUrl: "/arrival11.jpg",
       isNew: true,
       model: "Nikon D3400",
       price: "699",
     },
     {
       id: 12,
-      imageUrl: "/arrival2.jpg",
+      imageUrl: "/arrival12.jpg",
       model: "Panasonic Lumix GH5s",
       isSale: true,
       price: "1799",
@@ -142,25 +138,25 @@ export default function App() {
     },
     {
       id: 16,
-      imageUrl: "/arrival1.jpg",
+      imageUrl: "/arrival12.jpg",
       model: "Nikon D3500",
       price: "799",
     },
     {
       id: 17,
-      imageUrl: "/arrival2.jpg",
+      imageUrl: "/arrival7.jpg",
       model: "Canon EOS 5D Mark IV",
       price: "2499",
     },
     {
       id: 18,
-      imageUrl: "/arrival3.jpg",
+      imageUrl: "/arrival11.jpg",
       model: "Sony Alpha a6400",
       price: "699",
     },
     {
       id: 19,
-      imageUrl: "/arrival4.jpg",
+      imageUrl: "/arrival0.jpg",
       model: "Fujifilm X-T3",
       price: "1299",
     },
@@ -173,52 +169,52 @@ export default function App() {
     },
     {
       id: 21,
-      imageUrl: "/arrival3.jpg",
+      imageUrl: "/arrival8.jpg",
       model: "Sony Alpha a6400",
       price: "699",
     },
     {
       id: 22,
-      imageUrl: "/arrival4.jpg",
+      imageUrl: "/arrival10.jpg",
       model: "Fujifilm X-T3",
       price: "1299",
     },
     {
       id: 23,
-      imageUrl: "/arrival5.jpg",
+      imageUrl: "/arrival4.jpg",
       model: "Panasonic Lumix GH5",
       price: "1999",
     },
     {
       id: 24,
-      imageUrl: "/arrival1.jpg",
+      imageUrl: "/arrival3.jpg",
       isNew: true,
       model: "Sony Alpha a7R III",
       price: "2999",
     },
     {
       id: 25,
-      imageUrl: "/arrival2.jpg",
+      imageUrl: "/arrival12.jpg",
       isNew: true,
       model: "Nikon D850",
       price: "2999",
     },
     {
       id: 26,
-      imageUrl: "/arrival3.jpg",
+      imageUrl: "/arrival7.jpg",
       model: "Canon EOS 5D Mark IV",
       price: "2499",
       isSale: true,
     },
     {
       id: 27,
-      imageUrl: "/arrival4.jpg",
+      imageUrl: "/arrival6.jpg",
       model: "Fujifilm X-T20",
       price: "1499",
     },
     {
       id: 28,
-      imageUrl: "/arrival5.jpg",
+      imageUrl: "/arrival1.jpg",
       model: "Sony Alpha a7 III",
       price: "1499",
     },
@@ -243,43 +239,35 @@ export default function App() {
     }
   }
 
-  function decQuantity(item) {
-    console.log("updated");
-    setShoppingCart((prevCart) => {
-      const updatedCart = [...prevCart];
-      const existingCartItemIndex = updatedCart.findIndex(
-        (cartItem) => cartItem.id === item.id,
-      );
-      if (existingCartItemIndex !== -1) {
-        if (updatedCart[existingCartItemIndex].quantity > 1) {
-          updatedCart[existingCartItemIndex].quantity -= 1;
-        } else {
-          updatedCart.splice(existingCartItemIndex, 1);
-        }
-      }
-      return updatedCart;
-    });
-    console.log(item.quantity);
+  function incQuantity(cartItem) {
+    setShoppingCart((currentCart) =>
+      currentCart.map((item) =>
+        item.id === cartItem.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item,
+      ),
+    );
   }
 
-  function incQuantity(item) {
-    setShoppingCart((prevCart) => {
-      const updatedCart = [...prevCart];
-      const existingCartItemIndex = updatedCart.findIndex(
-        (cartItem) => cartItem.id === item.id,
+  function decQuantity(cartItem) {
+    if (cartItem.quantity === 1) {
+      // Optionally remove the item if its quantity goes to 0
+      remove(cartItem);
+    } else {
+      setShoppingCart((currentCart) =>
+        currentCart.map((item) =>
+          item.id === cartItem.id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item,
+        ),
       );
-      if (existingCartItemIndex !== -1) {
-        updatedCart[existingCartItemIndex].quantity += 1;
-      }
-      return updatedCart;
-    });
+    }
   }
 
-  function remove(item) {
-    setShoppingCart((prevCart) => {
-      calculateTotal();
-      return prevCart.filter((cartItem) => cartItem.id !== item.id);
-    });
+  function remove(cartItem) {
+    setShoppingCart((currentCart) =>
+      currentCart.filter((item) => item.id !== cartItem.id),
+    );
   }
 
   const [total, setTotal] = useState(0);
@@ -293,6 +281,8 @@ export default function App() {
     console.log(total, "hey");
   }
 
+  useEffect(() => calculateTotal(), [shoppingCart, calculateTotal]);
+
   return (
     <Suspense
       fallback={
@@ -303,7 +293,7 @@ export default function App() {
     >
       <BrowserRouter>
         <ScrollToTop />
-        <Header scrollY={scrollY} />
+        <Header scrollY={scrollY} shoppingCart={shoppingCart} />
         <Routes>
           <Route
             path="/"
