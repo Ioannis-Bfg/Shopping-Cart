@@ -1,1 +1,1 @@
-https://fosphotographyioannisbfg.netlify.app/
+https://fosphoto-ioannisbfg.netlify.app/
