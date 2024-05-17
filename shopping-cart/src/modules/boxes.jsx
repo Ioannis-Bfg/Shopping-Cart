@@ -74,6 +74,7 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
+                fontSize: "0.8vw",
               }}
               className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md "
             >
@@ -113,6 +114,7 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
+                fontSize: "0.8vw",
               }}
               className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
             >
@@ -153,6 +155,7 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
+                fontSize: "0.8vw",
               }}
               className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
             >

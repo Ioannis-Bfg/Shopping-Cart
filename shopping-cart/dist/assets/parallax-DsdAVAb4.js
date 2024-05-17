@@ -1,1 +1,0 @@
-import{j as e}from"./index-DSoxyIX4.js";function l(){return e.jsx("section",{id:"parallax",className:"w-full h-[350px] bg-center bg-fixed bg-cover bg-[url('/parallax.jpg')] flex justify-center items-center",children:e.jsx("p",{className:"text-5xl font-bold text-white ",children:"Professional Equipment"})})}export{l as default};

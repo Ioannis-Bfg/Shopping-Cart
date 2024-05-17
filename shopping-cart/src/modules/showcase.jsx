@@ -9,17 +9,20 @@ export default function Showcase() {
             to="/shop"
             className="bg-white h-full w-full  flex flex-col gap-1 items-center justify-center hover:bg-gray-800 group transition duration-500 ease-out"
           >
-            <p className="text-6xl font-black text-gray-900 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out ">
+            <p
+              className=" font-black text-gray-900 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out "
+              style={{ fontSize: "clamp( 1.5rem, 2.5vw, 3.5rem)" }}
+            >
               SALE
             </p>
-            <p className="text-2xl font-medium text-gray-700 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out">
+            <p className="text-2xl font-medium text-gray-700 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out -translate-y-2">
               up to 30%
             </p>
           </Link>
         </div>
       </div>
       <div className="h-[700px] rounded-lg col-span-8 shadow-xl grid grid-cols-10 px-40 py-12 bg-[rgba(221,221,221,0.23)] border-2 border-[#ffffff10] backdrop-blur-sm">
-        <div className="col-span-5 flex justify-start items-center ">
+        <div className="col-span-5 flex justify-center items-center ">
           <img
             src="/showcase.png"
             alt=""
