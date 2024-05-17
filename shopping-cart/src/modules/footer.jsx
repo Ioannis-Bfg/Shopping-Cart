@@ -12,7 +12,9 @@ export default function Footer() {
       />
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
-          <p className="text-3xl text-white font-semibold">Quick Links</p>
+          <p className="text-3xl text-white font-semibold" tabIndex={0}>
+            Quick Links
+          </p>
           <div className="w-20 h-1 bg-sky-400"></div>
         </div>
         <div className="flex flex-col gap-2  text-white ">
@@ -33,7 +35,9 @@ export default function Footer() {
 
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
-          <p className="text-3xl text-white font-semibold">Contact us</p>
+          <p className="text-3xl text-white font-semibold" tabIndex={0}>
+            Contact us
+          </p>
           <div className="w-20 h-1 bg-sky-400"></div>
         </div>
         <div className="flex flex-col gap-2  text-white">

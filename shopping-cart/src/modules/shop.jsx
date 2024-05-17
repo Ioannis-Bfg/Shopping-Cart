@@ -29,10 +29,14 @@ export default function Shop({ shopItems }) {
 
   return (
     <div className="w-full bg-gray-100 flex flex-col py-20 px-20 min-h-[800px] ">
-      <p className="text-3xl font-bold self-center">Shop</p>
+      <p className="text-3xl font-bold self-center" tabIndex={0}>
+        Shop
+      </p>
       <div className="flex flex-col sm:flex-row justify-between">
         <div className="col-span-2 px-20 py-20 sm:border-r-2 flex flex-col items-center gap-4">
-          <p className="text-2xl font-semibold">Filters</p>
+          <p className="text-2xl font-semibold" tabIndex={0}>
+            Filters
+          </p>
           <div className="flex flex-row sm:flex-col">
             <div className="mt-4">
               <label

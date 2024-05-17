@@ -4,7 +4,9 @@ export default function Review() {
       id="review"
       className="w-full bg-center bg-cover bg-review py-24 px-20 flex flex-col justify-center items-center gap-20"
     >
-      <p className="text-4xl text-gray-900">What our clients say</p>
+      <p className="text-4xl text-gray-900" tabIndex={0}>
+        What our clients say
+      </p>
       <div className="flex items-center gap-60">
         <div className="flex flex-col gap-6 justify-center items-center">
           <svg
@@ -87,7 +89,7 @@ export default function Review() {
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
           </div>
-          4.7/5 with 5000+ reviews
+          <p tabIndex={0}>4.7/5 with 5000+ reviews</p>
         </div>
         <div className="flex flex-col gap-6 justify-center items-center">
           <svg
@@ -186,7 +188,7 @@ export default function Review() {
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
           </div>
-          4.1/5 with 3000+ reviews
+          <p tabIndex={0}>4.1/5 with 3000+ reviews</p>
         </div>
         <div className="flex flex-col gap-6 justify-center items-center">
           <svg
@@ -283,7 +285,7 @@ export default function Review() {
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
           </div>
-          4.8/5 with 500+ reviews
+          <p tabIndex={0}>4.8/5 with 500+ reviews</p>
         </div>
       </div>
     </section>

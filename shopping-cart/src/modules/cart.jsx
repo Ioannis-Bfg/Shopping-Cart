@@ -43,7 +43,10 @@ export default function Cart({
     );
   } else {
     return (
-      <div className="h-full py-20 w-full flex min-h-[50rem] justify-center items-center bg-slate-100">
+      <section
+        id="cart"
+        className="h-full py-20 w-full flex min-h-[50rem] justify-center items-center bg-slate-100"
+      >
         <div className="grid grid-cols-5 w-6/12 h-2/3 gap-4">
           <div className="col-span-3 rounded-md flex flex-col gap-4">
             {shoppingCart.map((cartItem) => (
@@ -62,7 +65,9 @@ export default function Cart({
                       Delivered at your house withing 2-3 working days
                     </p>
                   </div>
-                  <p className="text-lg font-thin">{cartItem.item.model}</p>
+                  <p className="text-lg font-thin" tabIndex={0}>
+                    {cartItem.item.model}
+                  </p>
                 </div>
                 <div className="flex gap-6 items-center ">
                   <div className="flex gap-2 items-center border-2 justify-between border-slate-400 rounded-md">
@@ -87,7 +92,10 @@ export default function Cart({
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                       </svg>
                     </button>
-                    <p className="text-lg border-r-2 border-l-2 border-slate-400 px-3">
+                    <p
+                      className="text-lg border-r-2 border-l-2 border-slate-400 px-3"
+                      tabIndex={0}
+                    >
                       {cartItem.quantity}
                     </p>
                     <button
@@ -134,7 +142,7 @@ export default function Cart({
                       <line x1="14" y1="11" x2="14" y2="17"></line>
                     </svg>
                   </button>
-                  <p className="text-lg font-semibold">
+                  <p className="text-lg font-semibold" tabIndex={0}>
                     ${cartItem.item.price}
                   </p>
                 </div>
@@ -143,15 +151,19 @@ export default function Cart({
           </div>
           <div className=" col-span-2 rounded-md flex flex-col  gap-4 p-4 justify-start items-center">
             <div className="flex  gap-2 justify-center items-center bg-white p-8 rounded-md">
-              <p className="text-3xl">Your total is</p>
-              <p className="text-3xl font-bold">${total}</p>
+              <p className="text-3xl" tabIndex={0}>
+                Your total is
+              </p>
+              <p className="text-3xl font-bold" tabIndex={0}>
+                ${total}
+              </p>
             </div>
             <button className="bg-sky-500 font-semibold hover:bg-sky-600 text-white px-4 py-2 rounded">
               Checkout
             </button>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

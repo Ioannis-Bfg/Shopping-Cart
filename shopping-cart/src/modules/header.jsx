@@ -192,12 +192,20 @@ export default function Header({ scrollY, shoppingCart }) {
               <Link to="/shop">SHOP</Link>
             </li>
             <li>
-              <a onClick={handleAboutUsClick} className="cursor-pointer">
+              <a
+                onClick={handleAboutUsClick}
+                className="cursor-pointer"
+                tabIndex={0}
+              >
                 ABOUT US
               </a>
             </li>
             <li>
-              <a className="cursor-pointer" onClick={handleFAQClick}>
+              <a
+                className="cursor-pointer"
+                onClick={handleFAQClick}
+                tabIndex={0}
+              >
                 FAQ
               </a>
             </li>
@@ -239,16 +247,22 @@ export default function Header({ scrollY, shoppingCart }) {
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
-              viewBox="0 0 24 24"
+              viewBox="-1 -2 27 27"
               fill="none"
               stroke={isCartNotEmpty ? "#0ea5e9" : "currentColor"}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="feather feather-shopping-bag "
+              className={`feather feather-shopping-bag `}
             >
               <circle cx="9" cy="21" r="1"></circle>
               <circle cx="20" cy="21" r="1"></circle>
+              <circle
+                cx="20"
+                cy="4"
+                r="4"
+                className={`fill-sky-500 ${isCartNotEmpty ? "block animate-pulse" : "hidden"}`}
+              ></circle>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
           </Link>

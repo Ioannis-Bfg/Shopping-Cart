@@ -7,7 +7,9 @@ export default function Owner() {
       <div className="flex justify-center items-center gap-20 py-20 px-80 ">
         <img src="/owner.jpg" alt="owner" className="rounded-full size-80" />
         <div className="flex flex-col gap-4  bg-[rgba(255,255,255,0.29)] backdrop-blur-xl p-12 shadow-lg rounded-xl">
-          <p className="text-3xl font-bold">Karen Lee</p>
+          <p className="text-3xl font-bold" tabIndex={0}>
+            Karen Lee
+          </p>
           <p className="text-xl font-medium">Owner & Photographer</p>
           <p className="max-w-[82ch]">
             As a photographer, I strive to capture the world through the lens of

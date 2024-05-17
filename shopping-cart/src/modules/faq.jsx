@@ -47,9 +47,11 @@ export default function Faq() {
   return (
     <section
       id="FAQ"
-      className="w-full  flex flex-col justify-center items-center py-20 px-20 gap-8  "
+      className="w-full  flex flex-col justify-center items-center py-20 px-20 gap-8 "
     >
-      <p className="text-3xl font-bold text-gray-900">FAQ</p>
+      <p className="text-3xl font-bold text-gray-900" tabIndex={0}>
+        FAQ
+      </p>
       <div className="flex flex-col justify-center items-center gap-3 overflow-hidden bg-white w-1/3 rounded-md text-gray-800">
         <div
           className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-100"
@@ -58,7 +60,7 @@ export default function Faq() {
         >
           {" "}
           <div className="flex justify-between items-center w-full">
-            <p className="text-lg font-semibold text-current">
+            <p className="text-lg font-semibold text-current" tabIndex={0}>
               How was this website made?
             </p>
             <svg
@@ -85,7 +87,7 @@ export default function Faq() {
         >
           {" "}
           <div className="flex justify-between items-center w-full">
-            <p className="text-lg font-semibold text-current">
+            <p className="text-lg font-semibold text-current" tabIndex={0}>
               Is this site real?
             </p>
             <svg
@@ -112,7 +114,9 @@ export default function Faq() {
         >
           {" "}
           <div className="flex justify-between items-center w-full">
-            <p className="text-lg font-semibold text-current">How can I pay?</p>
+            <p className="text-lg font-semibold text-current" tabIndex={0}>
+              How can I pay?
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -136,7 +140,7 @@ export default function Faq() {
         >
           {" "}
           <div className="flex justify-between items-center w-full">
-            <p className="text-lg font-semibold text-current">
+            <p className="text-lg font-semibold text-current" tabIndex={0}>
               How long does shipping take?
             </p>
             <svg
