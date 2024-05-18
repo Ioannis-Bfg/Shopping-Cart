@@ -1,6 +1,6 @@
 export default function Item({ imageUrl }) {
   return (
-    <div className="container shadow-lg rounded-lg bg-white h-[400px] group grid grid-rows-10 ">
+    <div className=" shadow-lg rounded-lg bg-white h-[20rem] max-w-80 group grid grid-rows-10 ">
       <div className="row-span-7 overflow-hidden relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,22 +21,6 @@ export default function Item({ imageUrl }) {
           <p className=" text-xl font-medium text-gray-700">FUJIFILM X-T10</p>
           <p className="text-gray-600 font-bold text-xl">$1,200</p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="feather feather-shopping-cart stroke-sky-600"
-        >
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
       </div>
     </div>
   );

@@ -4,13 +4,13 @@ export default function Showcase() {
   return (
     <section
       id="showcase"
-      className="px-40 py-10 w-full gap-10 grid grid-cols-10"
+      className="px-32 py-10 w-full gap-10 grid grid-cols-10 min-h-[40rem]"
     >
-      <div className="h-[700px] rounded-lg col-span-2 px-4  shadow-xl container flex justify-center items-center bg-[url('/sale.jpg')] group/wrap">
-        <div className="aspect-[5/3] w-80 min-w-44 max-w-80 border-4  border-white p-1 transition-all duration-200 ease-out cursor-pointer group-hover/wrap:scale-105 group-hover/wrap:transition-all group-hover/wrap:duration-500 group-hover/wrap:ease-out">
+      <div className="h-full w-full rounded-lg col-span-2 px-10  shadow-xl flex justify-center items-center bg-[url('/sale.jpg')] group/wrap">
+        <div className="w-96 border-4  border-white p-1 transition-all duration-200 ease-out cursor-pointer group-hover/wrap:scale-105 group-hover/wrap:transition-all group-hover/wrap:duration-500 group-hover/wrap:ease-out">
           <Link
             to="/shop"
-            className="bg-white h-full w-full  flex flex-col gap-1 items-center justify-center hover:bg-gray-800 group transition duration-500 ease-out"
+            className="bg-white h-full w-full  flex flex-col gap-1 p-2 items-center justify-center hover:bg-gray-800 group transition duration-500 ease-out"
           >
             <p
               className=" font-black text-gray-900 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out "
@@ -18,18 +18,18 @@ export default function Showcase() {
             >
               SALE
             </p>
-            <p className="text-2xl font-medium text-gray-700 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out -translate-y-2">
+            <p className="text-xl truncate font-medium text-gray-700 transition duration-200 ease-out group-hover:text-white group-hover:transition group-hover:duration-500 group-hover:ease-out -translate-y-2">
               up to 30%
             </p>
           </Link>
         </div>
       </div>
-      <div className="h-[700px] rounded-lg col-span-8 shadow-xl grid grid-cols-10 px-40 py-12 bg-[rgba(221,221,221,0.23)] border-2 border-[#ffffff10] backdrop-blur-sm">
+      <div className="h-full rounded-lg col-span-8 shadow-xl grid grid-cols-10  py-12 bg-[rgba(221,221,221,0.23)] border-2 border-[#ffffff10] backdrop-blur-sm">
         <div className="col-span-5 flex justify-center items-center ">
           <img
             src="/showcase.png"
             alt=""
-            className="size-[28rem] min-h-[25rem] min-w-[25rem] object-fit aspect-square grayscale duration-500 ease-in hover:grayscale-0 hover:saturate-150 hover:scale-105 hover:transition hover:duration-500 hover:ease-out"
+            className="size-[25vw]  object-cover aspect-[1/1] grayscale duration-500 ease-in hover:grayscale-0 hover:saturate-150 hover:scale-105 hover:transition hover:duration-500 hover:ease-out"
           />
         </div>
         <div className="col-span-5 py-10 px-10 flex flex-col justify-between">
@@ -37,7 +37,7 @@ export default function Showcase() {
             <p className="text-5xl font-semibold" tabIndex={0}>
               Smena 8M
             </p>
-            <p className="w-[72ch]">
+            <p className="max-w-[72ch]">
               The Lomographic Society is proud to offer an exclusive, limited
               quantity of this gem. Purchased from our esteemed colleague, a
               total of 120 pieces have been preserved in perfect working
@@ -89,7 +89,7 @@ export default function Showcase() {
               </svg>
             </div>
             <div className="size-20 rounded-md border-2 border-gray-400  flex flex-col items-center">
-              <p className="text-md font-semibold p-2 text-gray-600 ">
+              <p className="text-md font-semibold p-2 text-gray-600 truncate ">
                 f4 / f16
               </p>
               <svg

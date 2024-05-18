@@ -2,9 +2,9 @@ export default function Owner() {
   return (
     <section
       id="owner-section"
-      className="w-full h-[400px] bg-center bg-cover bg-owner "
+      className="w-full h-full bg-center bg-cover bg-owner py-20 "
     >
-      <div className="flex justify-center items-center gap-20 py-20 px-80 ">
+      <div className="flex justify-center items-center gap-20 px-30 ">
         <img src="/owner.jpg" alt="owner" className="rounded-full size-80" />
         <div className="flex flex-col gap-4  bg-[rgba(255,255,255,0.29)] backdrop-blur-xl p-12 shadow-lg rounded-xl">
           <p className="text-3xl font-bold" tabIndex={0}>

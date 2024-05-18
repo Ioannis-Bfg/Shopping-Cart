@@ -5,7 +5,7 @@ export default function Arrivals() {
     <>
       <section
         id="arrivals"
-        className="text-center w-full flex gap-10 flex-col items-center py-10 px-40 b-inset"
+        className="text-center w-full flex gap-10 flex-col items-center py-10 px-40 "
       >
         <h1
           className="text-5xl font-bold text-sky-500 flex items-center gap-4 justify-center "
@@ -15,7 +15,7 @@ export default function Arrivals() {
             New Arrivals
           </p>
         </h1>
-        <div className="flex justify-center gap-10">
+        <div className="flex justify-center gap-10  flex-wrap">
           <Item imageUrl={"/arrival1.jpg"} />
           <Item imageUrl={"/arrival2.jpg"} />
           <Item imageUrl={"/arrival5.jpg"} />

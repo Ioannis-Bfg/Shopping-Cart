@@ -10,7 +10,10 @@ export default function Cart({
 }) {
   if (shoppingCart.length === 0) {
     return (
-      <div className="flex justify-center items-center h-[50rem] flex-col gap-5 bg-slate-100">
+      <section
+        id="empty-cart"
+        className="flex justify-center items-center h-[50rem] w-full flex-col gap-5 bg-slate-100"
+      >
         <div className="bg-white p-12 gap-8 rounded-md flex flex-col items-center text-lg">
           <div className="text-center">
             <p>It seems like your cart is empty!</p>
@@ -39,7 +42,7 @@ export default function Cart({
             Shop Now
           </Link>
         </div>
-      </div>
+      </section>
     );
   } else {
     return (
@@ -47,12 +50,12 @@ export default function Cart({
         id="cart"
         className="h-full py-20 w-full flex min-h-[50rem] justify-center items-center bg-slate-100"
       >
-        <div className="grid grid-cols-5 w-6/12 h-2/3 gap-4">
-          <div className="col-span-3 rounded-md flex flex-col gap-4">
+        <div className="flex flex-col lg:flex-row gap-4">
+          <div className="flex-3 rounded-md flex flex-col gap-4">
             {shoppingCart.map((cartItem) => (
               <div
                 key={cartItem.id}
-                className="flex justify-between bg-white p-4 pb-10 rounded-md shadow-md "
+                className="flex justify-between bg-white p-5 pb-10 rounded-md shadow-md "
               >
                 <div className="flex gap-4">
                   <div className="size-20 ">
@@ -149,7 +152,7 @@ export default function Cart({
               </div>
             ))}
           </div>
-          <div className=" col-span-2 rounded-md flex flex-col  gap-4 p-4 justify-start items-center">
+          <div className=" flex-2 rounded-md flex flex-col  gap-4 p-4 justify-start items-center">
             <div className="flex  gap-2 justify-center items-center bg-white p-8 rounded-md">
               <p className="text-3xl" tabIndex={0}>
                 Your total is

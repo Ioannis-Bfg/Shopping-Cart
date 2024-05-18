@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import "./header.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Header({ scrollY, shoppingCart }) {
   const [isHeaderOpaque, setIsHeaderOpaque] = useState(true);
   const [isCartNotEmpty, setIsCartNotEmpty] = useState(false); // This state will track whether the cart is empty
   let navigate = useNavigate();
+  const location = useLocation();
+  const currentPage = location.pathname;
 
   useEffect(() => {
     const halfScreen = window.innerHeight / 2;
@@ -186,10 +189,17 @@ export default function Header({ scrollY, shoppingCart }) {
         <nav>
           <ul>
             <li>
-              <Link to="/">home</Link>
+              <Link to="/" className={currentPage === "/" ? "opacity-100" : ""}>
+                home
+              </Link>
             </li>
             <li>
-              <Link to="/shop">SHOP</Link>
+              <Link
+                to="/shop"
+                className={currentPage === "/shop" ? "opacity-100" : ""}
+              >
+                SHOP
+              </Link>
             </li>
             <li>
               <a
@@ -222,8 +232,8 @@ export default function Header({ scrollY, shoppingCart }) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="30"
+              height="30"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -245,8 +255,8 @@ export default function Header({ scrollY, shoppingCart }) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="40"
+              height="30"
               viewBox="-1 -2 27 27"
               fill="none"
               stroke={isCartNotEmpty ? "#0ea5e9" : "currentColor"}

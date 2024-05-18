@@ -44,7 +44,10 @@ export default function Boxes() {
   };
   return (
     <>
-      <div className="flex h-[200px] justify-center items-center gap-4 px-[20rem] py-40 my-20">
+      <section
+        id="boxes"
+        className="flex h-[20rem] justify-center items-center gap-4 px-[5em] py-40 my-20"
+      >
         <div
           id="div-1"
           className="bg-gray-50 border-4  border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden py-40 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
@@ -74,7 +77,7 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "0.8vw",
+                fontSize: "0.95rem",
               }}
               className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md "
             >
@@ -114,7 +117,7 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "0.8vw",
+                fontSize: "0.95rem",
               }}
               className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
             >
@@ -155,17 +158,18 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "0.8vw",
+                fontSize: "0.95rem",
               }}
               className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
             >
-              As a certified camera seller, we ensure the highest quality
-              cameras and equipment to capture your memories with ease. We stand
-              behind our products and offer a 100% satisfaction guarantee.
+              Our cameras and equipment are of the highest quality, and we're
+              confident you'll be happy with your purchase. If you're not
+              satisfied for any reason, we'll gladly accept the camera back and
+              credit your account with the full price of the item.
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
