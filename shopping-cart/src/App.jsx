@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./notfound";
 const Boxes = lazy(() => import("./modules/boxes"));
 const ScrollToTop = lazy(() => import("./modules/scroll"));
 const ItemDetails = lazy(() => import("./modules/item_details"));
@@ -324,6 +325,8 @@ export default function App() {
               <ItemDetails shopItems={shopItems} addToCart={addToCart} />
             }
           />
+
+          <Route path="*" element={<NotFound />} />
 
           <Route
             path="/cart"
