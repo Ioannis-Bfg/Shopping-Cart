@@ -48,7 +48,7 @@ export default function Header({ scrollY, shoppingCart }) {
   return (
     <header className={headerClasses}>
       <div id="logo">
-        <Link to="/" id="button_logo">
+        <Link to="/" id="button_logo" aria-label="logo">
           <svg
             version="1.1"
             id="Layer_1"
@@ -202,22 +202,22 @@ export default function Header({ scrollY, shoppingCart }) {
               </Link>
             </li>
             <li>
-              <a
+              <Link
                 onClick={handleAboutUsClick}
                 className="cursor-pointer"
                 tabIndex={0}
               >
                 ABOUT US
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="cursor-pointer"
                 onClick={handleFAQClick}
                 tabIndex={0}
               >
                 FAQ
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -228,6 +228,7 @@ export default function Header({ scrollY, shoppingCart }) {
         >
           <button
             id="search_icon"
+            aria-label="search icon"
             className="transition ease-in duration-200  hover:scale-110 hover:transition hover:ease-out hover:duration-[500ms]"
           >
             <svg
@@ -249,6 +250,7 @@ export default function Header({ scrollY, shoppingCart }) {
           <Link
             to={"/cart"}
             id="shopping_cart_icon"
+            aria-label="shopping cart icon"
             className="transition ease-in duration-200
             hover:scale-110 hover:transition hover:ease-out
             hover:duration-[500ms]"

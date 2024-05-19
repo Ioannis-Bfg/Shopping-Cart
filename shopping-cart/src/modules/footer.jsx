@@ -119,6 +119,7 @@ export default function Footer() {
       <div className="flex flex-col gap-4">
         <p className="text-2xl text-white">Stay Connected!</p>
         <form action="">
+          <label htmlFor="" className="sr-only"></label>
           <input
             type="mail"
             className="rounded-l-md px-4 py-2 focus:border-teal focus:outline-none focus:ring-0 focus:border-sky-700"
