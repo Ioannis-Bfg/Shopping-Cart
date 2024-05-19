@@ -278,7 +278,6 @@ export default function App() {
       total += c.item.price * c.quantity;
     });
     setTotal(total);
-    console.log(total, "hey");
   }
 
   useEffect(() => calculateTotal(), [shoppingCart, calculateTotal]);

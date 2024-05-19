@@ -5,7 +5,7 @@ export default function Call() {
       id="call"
       className="min-h-42 w-full py-20 flex justify-center items-center "
     >
-      <div className="w-1/3 min-h-42 rounded-lg group flex justify-center items-center overflow-hidden bg-[url('../../public/call.jpg')] bg-cover p-20">
+      <div className="w-1/3 min-h-42 rounded-lg group flex justify-center items-center overflow-hidden bg-[url('/call.jpg')] bg-cover p-20">
         <Link
           to="/shop"
           className="text-5xl flex gap-4 items-center justify-center font-semibold  text-gray-700 rounded-md bg-white px-12 py-4 px-4 border-2 border-white group/btn hover:bg-sky-600 hover:text-white hover:transition hover:duration-300"
