@@ -50,8 +50,8 @@ export default function Cart({
         id="cart"
         className="h-full py-20 w-full flex min-h-[50rem] justify-center items-center bg-slate-100"
       >
-        <div className="flex flex-col lg:flex-row gap-4">
-          <div className="flex-3 rounded-md flex flex-col gap-4">
+        <div className="flex flex-col lg:flex-row gap-4 ">
+          <div className="flex-3 rounded-md flex flex-col gap-4 w-full ">
             {shoppingCart.map((cartItem) => (
               <div
                 key={cartItem.id}
@@ -153,8 +153,8 @@ export default function Cart({
             ))}
           </div>
           <div className=" flex-2 rounded-md flex flex-col  gap-4 p-4 justify-start items-center">
-            <div className="flex  gap-2 justify-center items-center bg-white p-8 rounded-md">
-              <p className="text-3xl" tabIndex={0}>
+            <div className="flex flex-col gap-2 justify-center items-center bg-white p-8 rounded-md shadow-md">
+              <p className="text-3xl truncate" tabIndex={0}>
                 Your total is
               </p>
               <p className="text-3xl font-bold" tabIndex={0}>

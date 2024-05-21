@@ -28,7 +28,6 @@ export default function Call() {
           </svg>
           <p className="truncate">SHOP NOW</p>
         </Link>
-        ;
       </div>
     </section>
   );
