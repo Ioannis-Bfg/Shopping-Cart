@@ -17,24 +17,30 @@ export default function Boxes() {
 
     currentDiv.style.backgroundColor = "rgb(14 165 233)";
     const infoDiv = currentDiv.querySelector("#info");
+    infoDiv.style.display = "block";
     infoDiv.style.height = "fit-content";
     infoDiv.style.width = "fit-content";
     infoDiv.style.padding = "20px";
     infoDiv.style.opacity = "1";
     infoDiv.style.borderWidth = "4px";
-    infoDiv.style.transition = "all 0.3s ease-in";
+    infoDiv.style.transition = "all 0.1s ease-in";
     ids.forEach((id) => {
       if (id !== currentDiv.id) {
         const otherDiv = document.getElementById(id);
+        otherDiv.style.transition = "all 0.4s ease-out";
         otherDiv.style.flex = "1";
         otherDiv.style.opacity = "0.8";
         otherDiv.style.backgroundColor = "rgb(249 250 251)";
         otherDiv.style.color = "rgb(2 132 199)";
+
         const otherInfoDiv = otherDiv.querySelector("#info");
         otherInfoDiv.style.height = "0";
+        otherInfoDiv.style.display = "none";
+        otherInfoDiv.style.opacity = "0";
         otherInfoDiv.style.width = "0";
         otherInfoDiv.style.padding = "0px";
-        otherInfoDiv.style.borderWidth = "0";
+        otherInfoDiv.style.transition = "all 0.1s ease-in";
+        otherInfoDiv.style.borderWidth = "0px";
       }
     });
   };
@@ -50,13 +56,14 @@ export default function Boxes() {
       >
         <div
           id="div-1"
-          className="bg-gray-50 border-4  border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden py-40 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
+          className="bg-gray-50 border-4 border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden py-40 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex flex-col gap-2 justify-center items-center px-20 ">
+          <div className="flex  gap-20 justify-center items-center px-20 ">
             <div className="flex flex-col  justify-center items-center">
               <svg
+                id="svg"
                 className="fill-current size-20 min-w-10 min-h-10"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -79,7 +86,7 @@ export default function Boxes() {
                 opacity: "0",
                 fontSize: "0.95rem",
               }}
-              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md "
+              className="h-0 w-0  border-white border-4 text-white rounded-md hidden"
             >
               As a certified camera seller, we ensure the highest quality
               cameras and equipment to capture your memories with ease. We stand
@@ -94,7 +101,7 @@ export default function Boxes() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex flex-col gap-2 justify-center items-center px-20 ">
+          <div className="flex  gap-20 justify-center items-center px-20 ">
             <div className="flex flex-col  justify-center items-center">
               <svg
                 className="fill-current size-20 min-w-10 min-h-10"
@@ -119,7 +126,7 @@ export default function Boxes() {
                 opacity: "0",
                 fontSize: "0.95rem",
               }}
-              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
+              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md hidden"
             >
               We offer free shipping on all orders over $100. We want to make it
               easy for you to capture your memories without the worry of
@@ -135,7 +142,7 @@ export default function Boxes() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex flex-col gap-2 justify-center items-center px-20 ">
+          <div className="flex  gap-20 justify-center items-center px-20 ">
             <div className="flex flex-col  justify-center items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +167,7 @@ export default function Boxes() {
                 opacity: "0",
                 fontSize: "0.95rem",
               }}
-              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md"
+              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md hidden"
             >
               Our cameras and equipment are of the highest quality, and we're
               confident you'll be happy with your purchase. If you're not
