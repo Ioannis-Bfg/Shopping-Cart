@@ -1,7 +1,79 @@
+import React, { useEffect, useRef, useState } from "react";
+import lottie from "lottie-web";
+
+function LottieAnimation({ autoplay }) {
+  const animationContainer = useRef(null);
+  const animationInstance = useRef(null);
+
+  useEffect(() => {
+    animationInstance.current = lottie.loadAnimation({
+      container: animationContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: autoplay,
+      path: "/checkanim.json",
+    });
+
+    animationInstance.current.goToAndStop(234, true);
+
+    return () => {};
+  }, [autoplay]);
+
+  return <div ref={animationContainer} />;
+}
+
+function LottieAnimation2({ autoplay }) {
+  const animationContainer = useRef(null);
+  const animationInstance = useRef(null);
+
+  useEffect(() => {
+    animationInstance.current = lottie.loadAnimation({
+      container: animationContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: autoplay,
+      path: "/boxanim.json",
+    });
+
+    animationInstance.current.goToAndStop(0, true);
+
+    return () => {};
+  }, [autoplay]); // Add autoplay to the dependency array
+
+  return <div ref={animationContainer} />;
+}
+
+function LottieAnimation3({ autoplay }) {
+  const animationContainer = useRef(null);
+  const animationInstance = useRef(null);
+
+  useEffect(() => {
+    animationInstance.current = lottie.loadAnimation({
+      container: animationContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: autoplay,
+      path: "/arrowanim.json",
+    });
+
+    animationInstance.current.goToAndStop(0, true);
+
+    return () => {};
+  }, [autoplay]); // Add autoplay to the dependency array
+
+  return <div ref={animationContainer} />;
+}
+
 export default function Boxes() {
   const ids = ["div-1", "div-2", "div-3"];
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isAnimating2, setIsAnimating2] = useState(false);
+  const [isAnimating3, setIsAnimating3] = useState(false);
 
   const handleMouseEnter = (event) => {
+    setIsAnimating(true);
+    setIsAnimating2(true);
+    setIsAnimating3(true);
     let currentDiv = event.target;
     while (
       currentDiv.id !== "div-1" &&
@@ -10,6 +82,25 @@ export default function Boxes() {
     ) {
       currentDiv = currentDiv.parentElement;
     }
+
+    if (currentDiv.id === "div-1") {
+      setIsAnimating(true);
+      setIsAnimating2(false);
+      setIsAnimating3(false);
+    }
+
+    if (currentDiv.id === "div-2") {
+      setIsAnimating(false);
+      setIsAnimating2(true);
+      setIsAnimating3(false);
+    }
+
+    if (currentDiv.id === "div-3") {
+      setIsAnimating(false);
+      setIsAnimating2(false);
+      setIsAnimating3(true);
+    }
+
     currentDiv.style.flex = "2";
     currentDiv.style.transition = "all 0.4s ease-out";
     currentDiv.style.opacity = "1";
@@ -61,16 +152,14 @@ export default function Boxes() {
           onMouseLeave={handleMouseLeave}
         >
           <div className="flex  gap-20 justify-center items-center px-20 ">
-            <div className="flex flex-col  justify-center items-center">
-              <svg
-                id="svg"
-                className="fill-current size-20 min-w-10 min-h-10"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <title>check-circle-outline</title>
-                <path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z" />
-              </svg>
+            <div className="flex flex-col  justify-center gap-2 items-center">
+              <div className="w-20 h-20 min-h-20 min-w-20 overflow-hidden ">
+                {isAnimating ? (
+                  <LottieAnimation autoplay={isAnimating} />
+                ) : (
+                  <img src="/check-blue.svg" alt="" />
+                )}
+              </div>
               <div className="flex flex-col items-center">
                 <p className="truncate font-medium text-xl text-current">
                   Certified Seller
@@ -103,14 +192,13 @@ export default function Boxes() {
         >
           <div className="flex  gap-20 justify-center items-center px-20 ">
             <div className="flex flex-col  justify-center items-center">
-              <svg
-                className="fill-current size-20 min-w-10 min-h-10"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <title>mailbox-open-outline</title>
-                <path d="M14,11H20V15H18V13H14V11M18,4H8A5,5 0 0,0 3,9V18H1V20H21A2,2 0 0,0 23,18V9A5,5 0 0,0 18,4M11,18H5V9A3,3 0 0,1 8,6A3,3 0 0,1 11,9V18M21,18H13V9C13,7.92 12.65,6.86 12,6H18A3,3 0 0,1 21,9V18Z" />
-              </svg>
+              <div className="w-20 h-20 min-h-20 min-w-20 overflow-hidden ">
+                {isAnimating2 ? (
+                  <LottieAnimation2 autoplay={isAnimating2} />
+                ) : (
+                  <img src="/box-blue.svg" alt="" />
+                )}
+              </div>
               <div className="flex flex-col items-center">
                 <p className="truncate font-medium text-xl text-current">
                   Free Shipping
@@ -144,14 +232,13 @@ export default function Boxes() {
         >
           <div className="flex  gap-20 justify-center items-center px-20 ">
             <div className="flex flex-col  justify-center items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="fill-current size-20 min-w-10 min-h-10"
-                viewBox="0 0 24 24"
-              >
-                <title>keyboard-return</title>
-                <path d="M19,7V11H5.83L9.41,7.41L8,6L2,12L8,18L9.41,16.58L5.83,13H21V7H19Z" />
-              </svg>
+              <div className="w-20 h-20 min-h-20 min-w-20 overflow-hidden ">
+                {isAnimating3 ? (
+                  <LottieAnimation3 autoplay={isAnimating3} />
+                ) : (
+                  <img src="/arrow-blue.svg" alt="" />
+                )}
+              </div>
               <div className="flex flex-col items-center">
                 <p className="truncate font-medium text-xl text-current">
                   14-Day Returns
@@ -180,5 +267,3 @@ export default function Boxes() {
     </>
   );
 }
-
-// hover:flex-[2] transition-all duration-300 ease-out

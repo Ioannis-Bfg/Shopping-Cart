@@ -54,7 +54,7 @@ export default function Faq() {
       </p>
       <div className="flex flex-col justify-center items-center gap-3 overflow-hidden bg-white w-1/3 rounded-md text-gray-800">
         <div
-          className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-100"
+          className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-200"
           id="d-1"
           onClick={stretch}
         >
@@ -81,7 +81,7 @@ export default function Faq() {
         </div>
 
         <div
-          className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-100"
+          className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-200"
           id="d-2"
           onClick={stretch}
         >
@@ -108,7 +108,7 @@ export default function Faq() {
         </div>
 
         <div
-          className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-100"
+          className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-200"
           id="d-3"
           onClick={stretch}
         >
@@ -134,7 +134,7 @@ export default function Faq() {
         </div>
 
         <div
-          className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-100"
+          className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-200"
           id="d-4"
           onClick={stretch}
         >
