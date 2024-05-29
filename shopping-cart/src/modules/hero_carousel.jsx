@@ -55,6 +55,10 @@ export default function HeroCarousel() {
     setCurrentIndex(newIndex);
   };
 
+  useEffect(() => {
+    console.log("carousel-rendered");
+  });
+
   const goToNext = () => {
     const isLastSlide = currentIndex === heroes.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;

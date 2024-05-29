@@ -19,21 +19,6 @@ const Parallax = lazy(() => import("./modules/parallax"));
 const Showcase = lazy(() => import("./modules/showcase"));
 
 export default function App() {
-  const [scrollY, setScrollY] = useState(() => {
-    const savedScrollY = localStorage.getItem("scrollY");
-    return savedScrollY ? parseInt(savedScrollY) : 0;
-  });
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      localStorage.setItem("scrollY", scrollY.toString());
-    };
-  }, []);
-
   const [shoppingCart, setShoppingCart] = useState([]);
 
   const shopItems = [

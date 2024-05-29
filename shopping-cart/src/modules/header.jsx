@@ -1,25 +1,43 @@
 import { Link } from "react-router-dom";
 import "./header.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import _ from "lodash";
 
-export default function Header({ scrollY, shoppingCart }) {
+export default function Header({ shoppingCart }) {
   const [isHeaderOpaque, setIsHeaderOpaque] = useState(true);
-  const [isCartNotEmpty, setIsCartNotEmpty] = useState(false); // This state will track whether the cart is empty
+  const [isCartNotEmpty, setIsCartNotEmpty] = useState(false);
   let navigate = useNavigate();
   const location = useLocation();
   const currentPage = location.pathname;
 
-  useEffect(() => {
-    const halfScreen = window.innerHeight / 2;
-    setIsHeaderOpaque(scrollY > halfScreen);
-  }, [scrollY]);
+  const scrollHandler = useRef();
+
+  // Debounced scroll handler
+  const handleScroll = useCallback(
+    _.debounce(() => {
+      const halfScreen = window.innerHeight / 2;
+      setIsHeaderOpaque(window.scrollY > halfScreen);
+    }, 100),
+    [],
+  );
 
   useEffect(() => {
-    // Set isCartNotEmpty to true if the shopping cart is not empty
+    scrollHandler.current = handleScroll;
+    window.addEventListener("scroll", scrollHandler.current);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler.current);
+    };
+  }, [handleScroll]);
+
+  useEffect(() => {
     setIsCartNotEmpty(shoppingCart.length > 0);
   }, [shoppingCart]);
+
+  useEffect(() => {
+    console.log("Header-rendered");
+  }, []);
 
   const handleAboutUsClick = (event) => {
     event.preventDefault();
