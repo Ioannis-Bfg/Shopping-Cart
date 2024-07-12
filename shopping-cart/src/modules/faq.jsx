@@ -47,12 +47,12 @@ export default function Faq() {
   return (
     <section
       id="FAQ"
-      className="w-full  flex flex-col justify-center items-center py-20 px-20 gap-8 "
+      className="flex flex-col justify-center items-center py-20 px-[4rem] gap-8 "
     >
       <p className="text-3xl font-bold text-gray-900" tabIndex={0}>
         FAQ
       </p>
-      <div className="flex flex-col justify-center items-center gap-3 overflow-hidden bg-white w-1/3 rounded-md text-gray-800">
+      <div className="flex flex-col justify-center items-center gap-3 overflow-hidden bg-white  rounded-md text-gray-800">
         <div
           className="max-h-[6rem] bg-gray-100 shadow w-full transition-all duration-[600ms] cursor-pointer flex flex-col  items-center overflow-hidden p-8 gap-6 hover:bg-slate-200"
           id="d-1"

@@ -4,9 +4,9 @@ export default function Showcase() {
   return (
     <section
       id="showcase"
-      className="px-32 py-10 w-full gap-10 grid grid-cols-10 min-h-[40rem]"
+      className="px-60 py-10 w-full gap-10 flex flex-col lg:flex-row  justify-center "
     >
-      <div className="h-full w-full rounded-lg col-span-2 px-10  shadow-xl flex justify-center items-center bg-[url('/sale.jpg')] group/wrap">
+      <div className="rounded-lg flex-2 px-10 py-10 shadow-xl flex justify-center items-center bg-[url('/sale.jpg')] bg-cover group/wrap">
         <div className="w-96 border-4  border-white p-1 transition-all duration-200 ease-out cursor-pointer group-hover/wrap:scale-105 group-hover/wrap:transition-all group-hover/wrap:duration-500 group-hover/wrap:ease-out">
           <Link
             to="/shop"
@@ -24,15 +24,15 @@ export default function Showcase() {
           </Link>
         </div>
       </div>
-      <div className="h-full rounded-lg col-span-8 shadow-xl grid grid-cols-10  py-12 bg-[rgba(221,221,221,0.23)] border-2 border-[#ffffff10] backdrop-blur-sm">
-        <div className="col-span-5 flex justify-center items-center ">
+      <div className=" rounded-lg flex-8 shadow-xl flex flex-col lg:flex-row  py-12 bg-[rgba(221,221,221,0.23)]  backdrop-blur-sm">
+        <div className=" flex justify-center items-center ">
           <img
             src="/showcase.png"
             alt=""
-            className="size-[25vw]  object-cover aspect-[1/1] grayscale duration-500 ease-in hover:grayscale-0 hover:saturate-150 hover:scale-105 hover:transition hover:duration-500 hover:ease-out"
+            className="size-[20vw]  object-cover aspect-[1/1] grayscale duration-500 ease-in hover:grayscale-0 hover:saturate-150 hover:scale-105 hover:transition hover:duration-500 hover:ease-out"
           />
         </div>
-        <div className="col-span-5 py-10 px-10 flex flex-col justify-between">
+        <div className=" py-10 px-10 flex flex-col gap-6 justify-between">
           <div className="flex flex-col gap-2">
             <p className="text-5xl font-semibold" tabIndex={0}>
               Smena 8M

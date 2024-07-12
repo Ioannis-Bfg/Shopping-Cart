@@ -143,7 +143,7 @@ export default function Boxes() {
     <>
       <section
         id="boxes"
-        className="flex h-[20rem] justify-center items-center gap-4 px-[5em] py-40 my-20"
+        className="flex lg:flex-row flex-col h-[20rem] justify-center items-center gap-4 px-[5em] py-40 my-20"
       >
         <div
           id="div-1"
@@ -151,9 +151,9 @@ export default function Boxes() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex  gap-20 justify-center items-center px-20 ">
+          <div className="flex  gap-20 justify-center items-center px-20 md:px-10">
             <div className="flex flex-col  justify-center gap-2 items-center">
-              <div className="w-20 h-20 min-h-20 min-w-20 overflow-hidden ">
+              <div className="lg:w-20 lg:h-20 md:w-14 md:h-14 w-10 h-10  overflow-hidden ">
                 {isAnimating ? (
                   <LottieAnimation autoplay={isAnimating} />
                 ) : (
@@ -173,7 +173,7 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "0.95rem",
+                fontSize: "1vw",
               }}
               className="h-0 w-0  border-white border-4 text-white rounded-md hidden"
             >
@@ -190,9 +190,9 @@ export default function Boxes() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex  gap-20 justify-center items-center px-20 ">
-            <div className="flex flex-col  justify-center items-center">
-              <div className="w-20 h-20 min-h-20 min-w-20 overflow-hidden ">
+          <div className="flex  gap-20 justify-center items-center px-20 md:px-10">
+            <div className="flex flex-col  justify-center gap-2 items-center">
+              <div className="lg:w-20 lg:h-20 md:w-14 md:h-14 w-10 h-10  overflow-hidden ">
                 {isAnimating2 ? (
                   <LottieAnimation2 autoplay={isAnimating2} />
                 ) : (
@@ -201,10 +201,10 @@ export default function Boxes() {
               </div>
               <div className="flex flex-col items-center">
                 <p className="truncate font-medium text-xl text-current">
-                  Free Shipping
+                  Certified Seller
                 </p>
                 <p className="truncate text-lg font-thin text-current">
-                  On Orders Over $100
+                  Leica, Fuji, Canon
                 </p>
               </div>
             </div>
@@ -212,14 +212,13 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "0.95rem",
+                fontSize: "1vw",
               }}
-              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md hidden"
+              className="h-0 w-0  border-white border-4 text-white rounded-md hidden"
             >
-              We offer free shipping on all orders over $100. We want to make it
-              easy for you to capture your memories without the worry of
-              shipping costs. So when you spend over $100, you get it all for
-              free.
+              As a certified camera seller, we ensure the highest quality
+              cameras and equipment to capture your memories with ease. We stand
+              behind our products and offer a 100% satisfaction guarantee.
             </div>
           </div>
         </div>
@@ -230,9 +229,9 @@ export default function Boxes() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex  gap-20 justify-center items-center px-20 ">
-            <div className="flex flex-col  justify-center items-center">
-              <div className="w-20 h-20 min-h-20 min-w-20 overflow-hidden ">
+          <div className="flex  gap-10 justify-center items-center px-20 md:px-10">
+            <div className="flex flex-col  justify-center gap-2 items-center">
+              <div className="lg:w-20 lg:h-20 md:w-14 md:h-14 w-10 h-10  overflow-hidden ">
                 {isAnimating3 ? (
                   <LottieAnimation3 autoplay={isAnimating3} />
                 ) : (
@@ -252,14 +251,13 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "0.95rem",
+                fontSize: "1vw",
               }}
-              className="h-0 w-0 overflow-hidden border-white border-4 text-white rounded-md hidden"
+              className="h-0 w-0  border-white border-4 text-white rounded-md hidden"
             >
-              Our cameras and equipment are of the highest quality, and we're
-              confident you'll be happy with your purchase. If you're not
-              satisfied for any reason, we'll gladly accept the camera back and
-              credit your account with the full price of the item.
+              Our cameras and equipment are of the highest quality. If you are
+              not satisfied for any reason, we will gladly accept the camera
+              back and credit your account with the full price of the item.
             </div>
           </div>
         </div>

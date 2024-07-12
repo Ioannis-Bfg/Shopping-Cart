@@ -7,7 +7,7 @@ export default function Review() {
       <p className="text-4xl text-gray-900" tabIndex={0}>
         What our clients say
       </p>
-      <div className="flex items-center gap-60">
+      <div className="flex flex-col lg:flex-row items-center gap-60">
         <div className="flex flex-col gap-6 justify-center items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
