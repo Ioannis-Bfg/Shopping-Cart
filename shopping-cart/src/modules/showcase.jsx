@@ -45,8 +45,8 @@ export default function Showcase() {
             </p>
           </div>
           <p className="text-5xl font-bold text-gray-900">$480</p>
-          <div className="md:flex grid grid-cols-2 justify-items-center items-center gap-2 ">
-            <div className="size-20 rounded-md border-2 border-gray-400  flex flex-col items-center">
+          <div className="md:flex flex flex-wrap justify-items-center self-items-center items-center gap-4 ">
+            <div className="size-20 rounded-md border-2 border-gray-400 flex flex-col items-center">
               <p className="text-md font-semibold p-2 text-gray-600 ">40mm</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
