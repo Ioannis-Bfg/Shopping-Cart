@@ -2,7 +2,7 @@ export default function Hero({ image, header, subheader, paragraph, call }) {
   return (
     <div
       style={{ backgroundImage: `url(${image})` }}
-      className="bg-cover py-[20rem] bg-center px-80 flex justify-end items-center saturate-100"
+      className="md:bg-cover py-[20rem] bg-[length:50%_100%] bg-center lg:bg-center px-80 flex justify-end items-center saturate-100"
     ></div>
   );
 }

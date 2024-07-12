@@ -3,7 +3,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="w-full h-[400px] bg-gray-500 flex justify-center items-center gap-24"
+      className="min-h-[400px] bg-gray-500 flex flex-col pb-20 lg:flex-row justify-center items-center xl:gap-20 lg:gap-6 gap-4"
     >
       <img
         src="/logofooter.svg"
@@ -11,8 +11,11 @@ export default function Footer() {
         className="size-60 fill-white mix-blend-mix-blend-luminosity"
       />
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-1">
-          <p className="text-3xl text-white font-semibold" tabIndex={0}>
+        <div className="flex flex-col gap-1 lg:items-start items-center">
+          <p
+            className="text-3xl truncate text-white font-semibold"
+            tabIndex={0}
+          >
             Quick Links
           </p>
           <div className="w-20 h-1 bg-sky-400"></div>
@@ -34,8 +37,8 @@ export default function Footer() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-1">
-          <p className="text-3xl text-white font-semibold" tabIndex={0}>
+        <div className="flex flex-col lg:items-start items-center gap-1">
+          <p className="text-3xl text-white font-semibold " tabIndex={0}>
             Contact us
           </p>
           <div className="w-20 h-1 bg-sky-400"></div>
@@ -122,7 +125,7 @@ export default function Footer() {
           <label htmlFor="" className="sr-only"></label>
           <input
             type="mail"
-            className="rounded-l-md px-4 py-2 focus:border-teal focus:outline-none focus:ring-0 focus:border-sky-700"
+            className="rounded-l-md  px-4 py-2 focus:border-teal focus:outline-none focus:ring-0 focus:border-sky-700"
           />
           <button className="bg-white text-sky-600 px-4 py-2 rounded-r-md border-2 border-gray-500">
             Subscribe

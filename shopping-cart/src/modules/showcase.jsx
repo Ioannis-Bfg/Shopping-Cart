@@ -24,12 +24,12 @@ export default function Showcase() {
           </Link>
         </div>
       </div>
-      <div className=" rounded-lg flex-8 shadow-xl flex flex-col lg:flex-row  py-12 bg-[rgba(221,221,221,0.23)]  backdrop-blur-sm">
+      <div className=" rounded-lg flex-8 shadow-xl flex flex-col lg:flex-row  py-4 bg-[rgba(221,221,221,0.23)]  backdrop-blur-sm">
         <div className=" flex justify-center items-center flex-shrink-0">
           <img
             src="/showcase.png"
             alt=""
-            className="size-[20vw]  object-cover aspect-[1/1] grayscale duration-500 ease-in hover:grayscale-0 hover:saturate-150 hover:scale-105 hover:transition hover:duration-500 hover:ease-out"
+            className="md:size-[20vw] size-[30vw]  object-cover aspect-[1/1] grayscale duration-500 ease-in hover:grayscale-0 hover:saturate-150 hover:scale-105 hover:transition hover:duration-500 hover:ease-out"
           />
         </div>
         <div className=" py-10 px-10 flex flex-col gap-6 justify-between">
