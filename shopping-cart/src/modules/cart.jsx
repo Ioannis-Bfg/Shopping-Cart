@@ -12,7 +12,7 @@ export default function Cart({
     return (
       <section
         id="empty-cart"
-        className="flex justify-center items-center h-[50rem] w-full flex-col gap-5 bg-slate-100"
+        className="flex justify-center items-center h-[50rem] w-full flex-col gap-5 px-10 bg-slate-100"
       >
         <div className="bg-white p-12 gap-8 rounded-md flex flex-col items-center text-lg">
           <div className="text-center">
@@ -48,7 +48,7 @@ export default function Cart({
     return (
       <section
         id="cart"
-        className="h-full py-20 w-full flex min-h-[50rem] justify-center items-center bg-slate-100"
+        className="h-full py-20 w-full flex min-h-[50rem] justify-center items-center px-20 bg-slate-100"
       >
         <div className="flex flex-col lg:flex-row gap-4 ">
           <div className="flex-3 rounded-md flex flex-col gap-4 w-full ">

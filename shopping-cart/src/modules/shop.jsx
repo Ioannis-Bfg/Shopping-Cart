@@ -28,7 +28,7 @@ export default function Shop({ shopItems }) {
   });
 
   return (
-    <div className="w-full bg-gray-100 flex flex-col py-20 px-20 min-h-[800px] ">
+    <div className="w-full overflow-hidden bg-gray-100 flex flex-col py-20 px-20 gap-8 min-h-[800px] ">
       <p className="text-3xl font-bold self-center" tabIndex={0}>
         Shop
       </p>
@@ -37,7 +37,7 @@ export default function Shop({ shopItems }) {
           <p className="text-2xl font-semibold" tabIndex={0}>
             Filters
           </p>
-          <div className="flex flex-row sm:flex-col">
+          <div className="flex flex-col ">
             <div className="mt-4">
               <label
                 htmlFor="showSaleItems"
@@ -75,7 +75,7 @@ export default function Shop({ shopItems }) {
           </div>
         </div>
         <div
-          className=" px-10 py-20 "
+          className=" px-10 py-2 justify-center "
           style={{
             width: "100%",
             display: "flex",

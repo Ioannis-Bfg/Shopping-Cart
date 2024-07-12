@@ -143,15 +143,15 @@ export default function Boxes() {
     <>
       <section
         id="boxes"
-        className="flex lg:flex-row flex-col h-[20rem] justify-center items-center gap-4 px-[5em] py-40 my-20"
+        className="flex lg:flex-row flex-col lg:h-[20rem] justify-center items-center gap-4 px-[5em] py-10 "
       >
         <div
           id="div-1"
-          className="bg-gray-50 border-4 border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden py-40 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
+          className="bg-gray-50 border-4 border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden lg:py-40 py-10 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex  gap-20 justify-center items-center px-20 md:px-10">
+          <div className="lg:flex-row flex flex-col gap-10 lg:gap-10 justify-center items-center px-10 md:px-10">
             <div className="flex flex-col  justify-center gap-2 items-center">
               <div className="lg:w-20 lg:h-20 md:w-14 md:h-14 w-10 h-10  overflow-hidden ">
                 {isAnimating ? (
@@ -173,9 +173,8 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "1vw",
               }}
-              className="h-0 w-0  border-white border-4 text-white rounded-md hidden"
+              className="h-0 w-0 text-md lg:text-xs xl:text-lg border-white border-4 text-white rounded-md hidden"
             >
               As a certified camera seller, we ensure the highest quality
               cameras and equipment to capture your memories with ease. We stand
@@ -186,11 +185,11 @@ export default function Boxes() {
 
         <div
           id="div-2"
-          className="bg-gray-50 border-4 border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden py-40 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
+          className="bg-gray-50 border-4 border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden lg:py-40 py-10 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex  gap-20 justify-center items-center px-20 md:px-10">
+          <div className="lg:flex-row flex flex-col gap-10 lg:gap-10 justify-center items-center px-10 md:px-10">
             <div className="flex flex-col  justify-center gap-2 items-center">
               <div className="lg:w-20 lg:h-20 md:w-14 md:h-14 w-10 h-10  overflow-hidden ">
                 {isAnimating2 ? (
@@ -212,9 +211,8 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "1vw",
               }}
-              className="h-0 w-0  border-white border-4 text-white rounded-md hidden"
+              className="h-0 w-0  text-md lg:text-xs xl:text-lg border-white border-4 text-white rounded-md hidden"
             >
               As a certified camera seller, we ensure the highest quality
               cameras and equipment to capture your memories with ease. We stand
@@ -225,12 +223,12 @@ export default function Boxes() {
 
         <div
           id="div-3"
-          className="bg-gray-50 border-4 border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden py-40 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
+          className="bg-gray-50 border-4 border-sky-500 h-full shadow-md bg-[url('/certified.png)] text-sky-600 w-full rounded-lg flex-1 overflow-hidden lg:py-40 py-10 transition-all duration-300 ease-out  flex flex-col justify-center items-center gap-4"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="flex  gap-10 justify-center items-center px-20 md:px-10">
-            <div className="flex flex-col  justify-center gap-2 items-center">
+          <div className="lg:flex-row flex flex-col gap-4 lg:gap-10 justify-center items-center px-10 md:px-10">
+            <div className="flex flex-col  justify-center gap-5 items-center">
               <div className="lg:w-20 lg:h-20 md:w-14 md:h-14 w-10 h-10  overflow-hidden ">
                 {isAnimating3 ? (
                   <LottieAnimation3 autoplay={isAnimating3} />
@@ -251,9 +249,8 @@ export default function Boxes() {
               id="info"
               style={{
                 opacity: "0",
-                fontSize: "1vw",
               }}
-              className="h-0 w-0  border-white border-4 text-white rounded-md hidden"
+              className="h-0 w-0 text-md lg:text-xs xl:text-lg border-white border-4 text-white rounded-md hidden"
             >
               Our cameras and equipment are of the highest quality. If you are
               not satisfied for any reason, we will gladly accept the camera

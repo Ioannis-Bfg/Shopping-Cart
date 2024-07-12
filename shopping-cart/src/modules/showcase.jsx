@@ -4,7 +4,7 @@ export default function Showcase() {
   return (
     <section
       id="showcase"
-      className="px-60 py-10 w-full gap-10 flex flex-col lg:flex-row  justify-center "
+      className="px-10 sm:px-40 xl:px-10 py-10 w-full gap-10 flex flex-col xl:flex-row  justify-center "
     >
       <div className="rounded-lg flex-2 px-10 py-10 shadow-xl flex justify-center items-center bg-[url('/sale.jpg')] bg-cover group/wrap">
         <div className="w-96 border-4  border-white p-1 transition-all duration-200 ease-out cursor-pointer group-hover/wrap:scale-105 group-hover/wrap:transition-all group-hover/wrap:duration-500 group-hover/wrap:ease-out">
@@ -25,7 +25,7 @@ export default function Showcase() {
         </div>
       </div>
       <div className=" rounded-lg flex-8 shadow-xl flex flex-col lg:flex-row  py-12 bg-[rgba(221,221,221,0.23)]  backdrop-blur-sm">
-        <div className=" flex justify-center items-center ">
+        <div className=" flex justify-center items-center flex-shrink-0">
           <img
             src="/showcase.png"
             alt=""
@@ -37,7 +37,7 @@ export default function Showcase() {
             <p className="text-5xl font-semibold" tabIndex={0}>
               Smena 8M
             </p>
-            <p className="max-w-[72ch]">
+            <p className=" hidden text-sm lg:block">
               The Lomographic Society is proud to offer an exclusive, limited
               quantity of this gem. Purchased from our esteemed colleague, a
               total of 120 pieces have been preserved in perfect working
@@ -45,7 +45,7 @@ export default function Showcase() {
             </p>
           </div>
           <p className="text-5xl font-bold text-gray-900">$480</p>
-          <div className="flex gap-4 ">
+          <div className="md:flex grid grid-cols-2 justify-items-center items-center gap-2 ">
             <div className="size-20 rounded-md border-2 border-gray-400  flex flex-col items-center">
               <p className="text-md font-semibold p-2 text-gray-600 ">40mm</p>
               <svg

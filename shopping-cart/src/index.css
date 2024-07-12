@@ -6,6 +6,10 @@ html {
   font-size: 16px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .spinner {
   display: flex;
   justify-content: center;

@@ -4,10 +4,10 @@ export default function Review() {
       id="review"
       className="w-full bg-center bg-cover bg-review py-24 px-20 flex flex-col justify-center items-center gap-20"
     >
-      <p className="text-4xl text-gray-900" tabIndex={0}>
+      <p className="text-4xl text-gray-900 text-center" tabIndex={0}>
         What our clients say
       </p>
-      <div className="flex flex-col lg:flex-row items-center gap-60">
+      <div className="flex flex-col lg:flex-row items-center lg:gap-60 gap-20 ">
         <div className="flex flex-col gap-6 justify-center items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

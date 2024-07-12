@@ -81,12 +81,12 @@ export default function HeroCarousel() {
 
   const { subheader, header, paragraph } = heroes[currentIndex];
   return (
-    <div className="relative flex items-center justify-center container-lg w-full">
+    <div className="relative flex items-center justify-center px-20 mb-10 overflow-hidden">
       {/* Previous Button */}
       <button
         onClick={goToPrev}
         aria-label="Previous"
-        className="absolute flex justify-center items-center left-20 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500 "
+        className="absolute flex justify-center items-center md:bottom-auto md:left-20 bottom-20 left-40 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500 "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -107,39 +107,47 @@ export default function HeroCarousel() {
       {/* Hero Carousel */}
       <div
         key={currentIndex}
-        className="flex flex-col container-lg justify-between items-center gap-2 px-20 py-8 w-[30vw]  bg-[hsl(0,0%,96%,0.9)] rounded-md text-gray-800 absolute right-80 z-10"
+        className="flex flex-col justify-between w-[40%] items-center gap-8 md:gap-2 px-20 py-8 bg-[hsl(0,0%,96%,0.9)] rounded-md text-gray-800 absolute  z-10"
       >
         <div className="flex flex-col gap-1 items-center">
-          <p className="text-gray-600 animate-fade-in">{subheader}</p>
-          <p className="font-bold text-3xl animate-fade-in">{header}</p>
+          <p className="text-gray-600 text-xl text-center  animate-fade-in">
+            {subheader}
+          </p>
+          <p className="font-bold md:text-2xl text-center hidden md:block text-sm animate-fade-in">
+            {header}
+          </p>
         </div>
-        <p className="text-sm  animate-fade-in  mb-4">{paragraph}</p>
+        <p className="text-xs  animate-fade-in  mb-4 hidden md:block">
+          {paragraph}
+        </p>
         <Link
           to="/shop"
           style={{ backgroundColor: heroes[currentIndex].color }}
           className="items-center transition-all ease-in duration-200 flex gap-2 hover:gap-4 hover:bg-sky-500 hover:transition-all hover:ease-out hover:duration-[500ms] px-5 py-3 text-white font-semibold rounded-md"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="feather feather-arrow-right"
-          >
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-arrow-right"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
           <p className="-translate-y-0.5">Explore More</p>
         </Link>
       </div>
 
       {/* Carousel Slides */}
-      <div className="overflow-hidden w-full">
+      <div>
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -156,7 +164,7 @@ export default function HeroCarousel() {
       <button
         onClick={goToNext}
         aria-label="Next"
-        className="absolute right-20 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500"
+        className="absolute  md:right-20 md:bottom-auto bottom-20 right-40 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

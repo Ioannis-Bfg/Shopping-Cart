@@ -5,7 +5,7 @@ export default function Arrivals() {
     <>
       <section
         id="arrivals"
-        className="text-center w-full flex gap-10 flex-col items-center py-10 px-40 "
+        className="flex gap-10 flex-col items-center py-10 px-20 "
       >
         <h1
           className="text-5xl font-bold text-sky-500 flex items-center gap-4 justify-center "

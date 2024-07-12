@@ -22,7 +22,7 @@ export default function ItemDetails({ shopItems, addToCart }) {
     <div className="h-full py-20 w-full bg-slate-200 flex flex-col justify-center gap-10 items-center relative">
       <Link
         to="/shop"
-        className="absolute z-50 top-4 left-20 flex gap-2 items-center justify-center text-white bg-sky-600 hover:bg-sky-700 p-3 rounded-full opacity-80 hover:opacity-100"
+        className="absolute z-50 top-4 md:left-20 flex gap-2 items-center justify-center text-white bg-sky-600 hover:bg-sky-700 p-3 rounded-full opacity-80 hover:opacity-100"
         tabIndex={0}
       >
         <svg
@@ -43,15 +43,15 @@ export default function ItemDetails({ shopItems, addToCart }) {
         </svg>
         <p className="text-current -translate-y-0.5">Shop</p>
       </Link>
-      <div className="flex justify-center items-center">
-        <div className="flex flex-col justify-center items-center shadow-lg z-10 size-[30rem]  rounded-md">
+      <div className="flex justify-center items-center  flex-col xl:flex-row px-20">
+        <div className="flex flex-col justify-center items-center shadow-lg z-10 md:size-[30rem] size-[20rem]  rounded-md">
           <img
             src={camera.imageUrl}
             alt=""
             className="w-full h-full rounded-md object-cover"
           />
         </div>
-        <div className="bg-white px-20 py-10 pl-32 flex flex-col -translate-x-24 z-1 justify-between gap-3 shadow-md rounded-md">
+        <div className="bg-white xl:px-20 py-10 xl:pl-32 px-8 flex flex-col xl:-translate-x-24 z-1 justify-between gap-3 shadow-md rounded-md">
           <div>
             <p className="text-3xl font-semibold" tabIndex={0}>
               {camera.model}
@@ -60,7 +60,7 @@ export default function ItemDetails({ shopItems, addToCart }) {
               ${camera.price}
             </p>
           </div>
-          <p className="w-[68ch]">
+          <p className="max-w-[68ch]">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
             saepe voluptatibus excepturi, sed facere iure. Suscipit id numquam
             consectetur corporis molestiae tenetur illum recusandae. Nam rem
@@ -85,7 +85,7 @@ export default function ItemDetails({ shopItems, addToCart }) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-20 py-10 items-center bg-sky-500 w-full text-white ">
+      <div className="flex w-full flex-col gap-10 py-10 px-20 items-center bg-sky-500  text-white ">
         <div className="flex gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -99,12 +99,12 @@ export default function ItemDetails({ shopItems, addToCart }) {
             Specifications
           </p>
         </div>
-        <div className="flex gap-12 items-center">
+        <div className="flex  lg:flex-row flex-col gap-6 items-center">
           <div className="flex flex-col gap-3">
             <p className="text-2xl font-semibold" tabIndex={0}>
               Header
             </p>
-            <p className="w-[68ch]">
+            <p className="max-w-[68ch]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. In quae
               nostrum aut ullam veniam facilis quo eveniet quaerat dignissimos
               distinctio? Consequuntur hic nisi recusandae commodi amet fugit,
@@ -120,12 +120,12 @@ export default function ItemDetails({ shopItems, addToCart }) {
           </div>
         </div>
 
-        <div className="flex flex-row-reverse gap-12 items-center">
+        <div className="flex lg:flex-row-reverse flex-col gap-6 items-center">
           <div className="flex flex-col gap-3">
             <p className="text-2xl font-semibold" tabIndex={0}>
               Header
             </p>
-            <p className="w-[68ch]">
+            <p className="max-w-[68ch]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. In quae
               nostrum aut ullam veniam facilis quo eveniet quaerat dignissimos
               distinctio? Consequuntur hic nisi recusandae commodi amet fugit,
@@ -141,12 +141,12 @@ export default function ItemDetails({ shopItems, addToCart }) {
           </div>
         </div>
 
-        <div className="flex gap-12 items-center">
+        <div className="flex lg:flex-row flex-col gap-6 items-center">
           <div className="flex flex-col gap-3">
             <p className="text-2xl font-semibold" tabIndex={0}>
               Header
             </p>
-            <p className="w-[68ch]">
+            <p className="max-w-[68ch]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. In quae
               nostrum aut ullam veniam facilis quo eveniet quaerat dignissimos
               distinctio? Consequuntur hic nisi recusandae commodi amet fugit,
@@ -167,7 +167,7 @@ export default function ItemDetails({ shopItems, addToCart }) {
         <p className="text-2xl font-semibold" tabIndex={0}>
           Users also bought
         </p>
-        <div className="flex justify-center items gap-10">
+        <div className="flex justify-center flex-wrap items gap-10">
           {nextShopItems.map((item) => (
             <ShopItem key={item.id} {...item} />
           ))}
