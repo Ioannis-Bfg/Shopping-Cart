@@ -377,7 +377,7 @@ export default function Header({ shoppingCart }) {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="feather feather-menu "
+                  className="feather feather-menu transition ease-in duration-200  hover:scale-110 hover:transition hover:ease-out hover:duration-[500ms] "
                 >
                   <line x1="3" y1="12" x2="21" y2="12"></line>
                   <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -394,26 +394,26 @@ export default function Header({ shoppingCart }) {
             <Link
               to="/"
               onClick={closeMenu}
-              className=" py-2 min-w-full hover:bg-gray-100 hover:text-sky-500 transition-all duration-200 ease-out hover:duration-100 hover:ease-in"
+              className=" py-2 min-w-full hover:bg-gray-100 hover:text-sky-500 transition-all duration-200 ease-out hover:duration-100 hover:ease-in active:bg-white"
             >
               Home
             </Link>
             <Link
               to="/shop"
               onClick={closeMenu}
-              className="cursor-pointer hover:bg-gray-100 hover:text-sky-500 transition-all duration-200 ease-out hover:duration-100 hover:ease-in  py-2 min-w-full"
+              className="cursor-pointer hover:bg-gray-100 hover:text-sky-500 transition-all duration-200 ease-out hover:duration-100 hover:ease-in  py-2 min-w-full active:bg-white"
             >
               Shop
             </Link>
             <Link
               onClick={handleAboutUsClick}
-              className=" hover:bg-gray-100 hover:text-sky-500 transition-all duration-200 ease-out hover:duration-100 hover:ease-in py-2 min-w-full"
+              className=" hover:bg-gray-100 hover:text-sky-500 transition-all duration-200 ease-out hover:duration-100 hover:ease-in py-2 min-w-full active:bg-white"
             >
               About us
             </Link>
             <Link
               onClick={handleFAQClick}
-              className="hover:bg-gray-100 hover:text-sky-500 transition-all duration-200 ease-out hover:duration-100 hover:ease-in py-2 min-w-full cursor-pointer"
+              className="hover:bg-gray-100 hover:text-sky-500 transition-all duration-200 ease-out hover:duration-100 hover:ease-in py-2 min-w-full cursor-pointer active:bg-white"
             >
               FAQ
             </Link>
