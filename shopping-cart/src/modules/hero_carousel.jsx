@@ -86,7 +86,7 @@ export default function HeroCarousel() {
       <button
         onClick={goToPrev}
         aria-label="Previous"
-        className="absolute flex justify-center items-center md:bottom-auto md:left-20 bottom-20 left-40 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500 "
+        className="absolute flex justify-center items-center md:bottom-auto md:left-20 bottom-20  left-32 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500 "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +164,7 @@ export default function HeroCarousel() {
       <button
         onClick={goToNext}
         aria-label="Next"
-        className="absolute  md:right-20 md:bottom-auto bottom-20 right-40 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500"
+        className="absolute  md:right-20 md:bottom-auto bottom-20 right-32 p-2 bg-white rounded-full shadow-md cursor-pointer *:hover:stroke-white hover:bg-sky-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -32,8 +32,8 @@ export default function Shop({ shopItems }) {
       <p className="text-3xl font-bold self-center" tabIndex={0}>
         Shop
       </p>
-      <div className="flex flex-col sm:flex-row justify-between">
-        <div className="col-span-2 px-20 py-20 sm:border-r-2 flex flex-col items-center gap-4">
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="col-span-2 px-20 py-20  md:border-r-2 flex flex-col items-center gap-4">
           <p className="text-2xl font-semibold" tabIndex={0}>
             Filters
           </p>
