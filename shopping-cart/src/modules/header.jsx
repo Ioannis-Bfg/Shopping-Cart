@@ -74,7 +74,7 @@ export default function Header({ shoppingCart }) {
 
   const threshold = 768;
 
-  const menu_classes = `${isMenuVisible && windowWidth <= threshold ? "initial animate-slide-in" : " animate-slide-out"} fixed   transform transition-transform duration-300 ease-in-out  right-0 bg-slate-200 border-l-2 border-[hsla(0,0%,0%,0.02)] z-[10000] min-h-[100vh] min-w-[40vw] px-2 flex flex-col gap-4 py-2 items-center text-md font-semibold text-center text-zinc-700`;
+  const menu_classes = ` ${isMenuVisible && windowWidth <= threshold ? "block animate-slide-in" : "hidden"} fixed  transform transition-transform duration-300 ease-in-out  right-0 bg-slate-200 border-l-2 border-[hsla(0,0%,0%,0.02)] z-[10000] min-h-[100vh] min-w-[40vw] px-2 flex flex-col gap-4 py-2 items-center text-md font-semibold text-center text-zinc-700`;
 
   const handleMenuClick = () => {
     setIsMenuVisible(!isMenuVisible);
