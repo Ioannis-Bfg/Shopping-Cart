@@ -101,7 +101,7 @@ export default function Header({ shoppingCart }) {
     };
   }, []);
 
-  const headerClasses = `bg-white container-lg h-[100px] shadow flex justify-between items-center lg:px-20 px-4 sm:px-8 overflow-hidden py-4 sticky top-0 z-[1000] ${
+  const headerClasses = `bg-white container-lg h-[100px] shadow flex justify-between items-center lg:px-20 px-14 overflow-hidden py-4 sticky top-0 z-[1000] ${
     isHeaderOpaque
       ? "header-opacity-transition"
       : "header-opacity-transition opacity-transition"
