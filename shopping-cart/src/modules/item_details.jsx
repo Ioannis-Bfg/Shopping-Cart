@@ -19,7 +19,7 @@ export default function ItemDetails({ shopItems, addToCart }) {
   }
 
   return (
-    <div className="h-full py-20 w-full bg-slate-200 flex flex-col justify-center gap-10 items-center relative">
+    <div className="h-full py-20 w-full bg-slate-200 flex flex-col justify-center gap-10 items-center relative overflow-x-hidden">
       <Link
         to="/shop"
         className="absolute z-50 top-4 md:left-20 flex gap-2 items-center justify-center text-white bg-sky-600 hover:bg-sky-700 p-3 rounded-full opacity-80 hover:opacity-100"

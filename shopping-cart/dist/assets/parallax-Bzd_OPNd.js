@@ -1,1 +1,0 @@
-import{j as e}from"./index-zBV9kY1v.js";function l(){return e.jsx("section",{id:"parallax",className:"w-full h-[350px] bg-center bg-fixed bg-cover bg-[url('/parallax.jpg')] flex justify-center items-center",children:e.jsx("p",{className:"md:text-5xl text-3xl  font-bold text-white ",tabIndex:0,children:"Professional Equipment"})})}export{l as default};

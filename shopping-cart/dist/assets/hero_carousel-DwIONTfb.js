@@ -1,4 +1,4 @@
-import{j as e,r as i,L as u}from"./index-zBV9kY1v.js";function m({image:t,header:n,subheader:r,paragraph:l,call:s}){return e.jsx("div",{style:{backgroundImage:`url(${t})`},className:"md:bg-cover py-[20rem] bg-[length:50%_100%] bg-center lg:bg-center px-80 flex justify-end items-center saturate-100"})}function p(){const[t,n]=i.useState(0),r=[{image:"/hero.jpg",subheader:"New Collection",header:"Summer 2024 FOS Collection",paragraph:`Get ready for the summer with our newest collection of cameras.
+import{j as e,r as i,L as u}from"./index-C00HKReu.js";function m({image:t,header:n,subheader:r,paragraph:l,call:s}){return e.jsx("div",{style:{backgroundImage:`url(${t})`},className:"md:bg-cover py-[20rem] bg-[length:50%_100%] bg-center lg:bg-center px-80 flex justify-end items-center saturate-100"})}function p(){const[t,n]=i.useState(0),r=[{image:"/hero.jpg",subheader:"New Collection",header:"Summer 2024 FOS Collection",paragraph:`Get ready for the summer with our newest collection of cameras.
           Lightweight, high-quality and perfect for capturing those special
           moments. Explore our new
           summer 2024 FOS collection
